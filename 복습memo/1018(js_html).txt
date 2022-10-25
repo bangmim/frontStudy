@@ -1,0 +1,45 @@
+document.querySelector(태그이름) : 태그이름으로 element를 선택한다
+document.querySelectorAll(태그이름) : 태그 이름을 가진 element를 모두 선택한다.
+
+document.getElementById : id를 가진 element를 선택한다
+document.getElementsByClassName(class) : class를 가진 element를 모두 선택한다
+
+document.querySelector(#id) : id를 가진 element를 선택한다
+document.querySelectorAll(.class) : class를 가진 element를 모두 선택한다.
+
+## DOM 속성 : createElement, appendChild
+// document.createElement(element) : element(태그이름)를 만든다.
+// element.textContent : element 태그 내의 text에 접근한다.
+
+
+<ul>
+    <li>foo</li>
+    <li>bar</li>
+</ul>
+
+<script>
+    const ul=document.querySelector("ul")
+    
+    //element 만들기
+    const li=document.createElement("li")
+
+    li.textContent="baz"
+
+    // HTML에 element(li)추가하기
+    ul.appendChild(li)
+</script>
+
+##DOM Method
+// element.classList.add(class) : element의 DOMTokenList에 class를 추가한다
+// element.classList.remove(class) : element의 DOMTokenList에 class를 제거한다
+// style 태그에 .(class 속성)으로  미리 만들어 놓아야 사용이 가능하다.
+
+    ul.classList.add("border")      -->style 태그에 .border{border:1px solid;} 있어야한다.
+    li[0].classList.add("underline")        -->style 태그에 .underline{text-decoration:underline;} 있어야한다.
+
+    ul.classList.remove("border")
+    li[0].classList.remove("underline")
+
+
+element.getAttribute(attribute):element의 attribute에 접근한다.
+lement.setAttribute(attribute, value) : element의 attribute에 value를 할당한다.

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- # Image -->
+
+    <!-- <style>
+        img{
+            width:100%;
+            height:100%;
+            object-fit: cover;
+        }
+        .container{
+            width:200px;
+            height:200px;
+            /* opacity(불투명) */
+            opacity:0.9;
+            cursor:pointer;
+        }
+        .container:hover{
+            opacity: 1;
+        }
+    </style>
+    <h1>Basic thumbnails</h1>
+    
+    <div class="container">
+        <img src="../../img/chicken-559892__340.webp" alt="">
+    </div> -->
+
+    <!-- # image transition -->
+    <!-- <style>
+        img{
+            width:100%;
+            height:100%;
+            object-fit: cover;
+        }
+        .container{
+            border:1px dashed;
+            width:200px;
+            height:200px;
+            cursor:pointer;
+            /* container 밖으로 overflow 되는 부분 hidden */
+            overflow:hidden;
+        }
+        img{
+            /* transition은 실제 적용되는 img에 적용해야 한다. container가 아닌 img */
+            transition:0.5s;
+        }
+        .container:hover img{
+            transform : scale(1.1, 1.1);
+        }
+    </style>
+
+    <h1>Scalable thumbnails</h1>
+    <div class="container">
+        <img src="../../img/chicken-559892__340.webp" alt="">
+    </div> -->
+
+    <!-- Overlay thumbnails -->
+
+    <!-- <style>
+        /* img도 닫힘태그가 없어 children을 가질 수 없다. div 태그 안에 담아 속성 적용 (input 속성 적용하기 위해 form을 사용했던 것과 유사) */
+        img{
+            width:inherit;
+            height:inherit;
+            object-fit: cover;
+        }
+        .container{
+            width:200px;
+            height:200px;
+            cursor:pointer;
+            position:relative;
+        }
+        .item{
+            /* layer */
+            position:absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            background-color: rgba(0, 0, 0, 0.5);
+            color:#fff;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* opacity:0 ->완전 투명 */
+            opacity:0;
+            transition:.5s;
+            /* 숫자 있는 속성에는 애니메이션 효과가 적용된다.
+            display : hidden -> none 은 숫자 속성이 아니기 때문에 효과 적용이 안된다. */
+        }
+        .container:hover .item{
+            opacity:1;
+        }
+        </style>
+    
+    <h1>Overlay thumbnails</h1>
+    <div class="container">
+        /* item : layer 역할 */
+        <div class="item">Description</div>
+        <img src="../../img/puppy-1207816__480.jpg" alt="">
+    </div> -->
+
+
+    <!-- <style>
+        img{
+            width:inherit;
+            height:inherit;
+            object-fit: cover;
+        }
+        .container{
+            width:200px;
+            height:200px;
+            position:relative;
+        }
+        .item{
+            position:absolute;
+            /* height:25%로 해도 같다. */
+            top:80%;
+            left: 0;
+            right:0;
+            bottom:0;
+            background-color: rgba(0, 0, 0, 0.5);
+
+            color:#fff;
+            text-align: center;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            opacity:0; 
+            transition:.5s;
+        }
+        .container:hover .item{
+            opacity:1;
+        }
+    </style>
+
+    <h1>Overlay thumbsnails</h1>
+
+    <div class="container">
+        <div class="item">Description</div>
+        <img src="../../img/istockphoto-1397690929-170667a.jpg" alt="">
+    </div> -->
+
+    <!-- # Hero Image (main Image) -->
+
+    <!-- <style>
+        .container{
+            height:300px;
+            background-color: #ddd;
+            position:relative;
+            background-image: url(../../img/wind-energy-7342177__480.jpg);
+            /* background-position:center와 background-size:cover를 하면 object-fit:cover와 같은 효과가 나타난다. */
+            background-position:center;
+            background-size:cover;
+            filter:grayscale(50%);
+        }
+        .item{
+            position:absolute;
+            /* 가운데 정렬 : top:50%, left:50%, transform:translate(-50%,-50%) */
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+        }
+    </style>
+
+    <div class="container">
+        <div class="item">
+            <h1>Heading</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+        </div>
+    </div> -->
+
+</body>
+</html>

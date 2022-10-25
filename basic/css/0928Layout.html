@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>  
+
+    <!-- # Responsive Layout -->
+
+
+    <!-- Layout:row -->
+
+    <!-- <style>
+        .wrap{
+            /* wrap이 필요한 이유 : background- color 적용하기 위해서 */
+            background-color: #222;
+        }
+        h1{
+            text-align: center;
+        }
+        p{
+            color:#888;
+        }
+        .container{
+            /* border:1px dashed; */
+            /* 가운데 정렬 : max-width와 margin:auto */
+            max-width:500px;
+            margin:auto;
+            color:#fff;
+            padding: 3rem 1rem;
+        }
+    </style>
+
+    <div class="wrap">
+        <div class="container">
+            <h1>Layout:row</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, error minus itaque doloribus dignissimos exercitationem vel cumque quas in, ad commodi, sapiente quia eius. Nihil aperiam totam animi atque architecto.</p>
+        </div>
+    </div> -->
+
+    <!-- ----------------- -->
+
+    <!-- <style>
+        .container{
+            border-bottom:1px solid #ddd;
+            display: flex;
+            max-width: 740px;
+            margin:auto;
+            padding:1rem 1rem;
+            flex-direction: column;
+        }
+        @media(min-width:568px){
+            .container{
+                flex-direction: row;
+            }
+        }
+        .container .img{
+            width:300px;
+            height:300px;
+            background-color: #ddd;
+            flex-shrink: 0;
+            margin:0 2rem 0 2rem;
+        }
+    </style>
+
+    <div class="wrap">
+        <div class="container">
+            <div class="item">
+                <h1>Heading</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis adipisci aut quisquam expedita sint impedit eum. Excepturi ipsum at error similique doloribus, iste quibusdam consequatur nobis aperiam ducimus commodi minima.</p>
+            </div>
+            <div class="item img"></div>
+        </div>
+    </div>
+    <div class="wrap">
+        <div class="container">
+            <div class="item img"></div>
+            <div class="item">
+                <h1>Heading</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis adipisci aut quisquam expedita sint impedit eum. Excepturi ipsum at error similique doloribus, iste quibusdam consequatur nobis aperiam ducimus commodi minima.</p>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- -------------------- -->
+    <!-- # Flex with width (grid를 사용하지 않고 grid 효과)-->
+    <!-- <style>
+        .container{
+            display: flex;
+            max-width:740px;
+            margin:0 auto;
+            border-top:1px solid #ddd;
+            /* flex-wrap: nowrap (기본값)->width에 상관 없이 옆으로 배치하려고 한다. ==>wrap 적용 : item을 감싼다. width 값이 적용된다. */
+            flex-wrap: wrap;
+        }
+        .item{
+            width:100%;
+            padding:0 1rem;
+            text-align: center;
+            /* padding 때문에 width값이 변경되어 border-box 적용 */
+            box-sizing: border-box;
+        }
+        @media (min-width:640px){
+            .item{
+                width:50%;
+            }
+        }
+        @media (min-width:768px){
+            .item{
+                width:25%;
+            }
+        }
+
+    </style>
+
+    <h1>Flex with width</h1>
+
+    <div class="container">
+        <div class="item">
+            <h2>Heading</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit aperiam id omnis cupiditate, </p>
+        </div>
+        <div class="item">
+            <h2>Heading</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="item">
+            <h2>Heading</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+        </div>
+        <div class="item">
+            <h2>Heading</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+        </div>
+        <div class="item">
+            <h2>Heading</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+        </div>
+        <div class="item">
+            <h2>Heading</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+        </div>
+        <div class="item">
+            <h2>Heading</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+        </div>
+        <div class="item">
+            <h2>Heading</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div> -->
+ 
+        <style>
+            .container{
+                border-top:1px solid #ddd;
+                display:flex;
+                max-width: 740px;
+                margin:0 auto;
+                flex-wrap: wrap;
+            }
+            .item{
+                padding:0 1rem;
+                width:100%;
+                /* box-sizing:border-box 적용하지 않으면 변경되는 width 값이 적용이 안된다. */
+                box-sizing: border-box;
+            }
+            ::marker{
+                color:blue;
+            }
+            @media(min-width:640px){
+                .item{
+                    width:50%;
+                }
+            }
+        </style>
+
+        <h1>flex-wrap: wrap</h1>
+        <div class="container">
+                <div class="item">
+                    <h2>Heading</h2>
+                    <ul>
+                        <li>List item</li>
+                        <li>List item</li>
+                        <li>List item</li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h2>Heading</h2>
+                    <ul>
+                        <li>List item</li>
+                        <li>List item</li>
+                        <li>List item</li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h2>Heading</h2>
+                    <ul>
+                        <li>List item</li>
+                        <li>List item</li>
+                        <li>List item</li>
+                    </ul>
+                </div>
+            </div>
+
+
+    </div>
+</body>
+</html>

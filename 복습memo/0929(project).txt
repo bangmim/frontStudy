@@ -1,0 +1,35 @@
+가운데 정렬 (1)
+top:50% left:50%    transform:translate(-50%, -50%)
+top-1/2 left-1/2    -translate-x-1/2 -translate-y-1/2
+
+가운데 정렬 (2)
+max-width + margin :0 auto
+max-w-3xl mx-auto
+
+z인덱스 : 기본값 0
+z-10 : 숫자가 커질수록 적용 우선순위가 된다.
+-값도 가능하다.
+
+flex-col 일때 수평정렬 -> items-center
+              수직정렬 -> justify-center
+flex-row 일때 수직정렬 -> items-center
+              수평정렬 -> justify-center
+
+img 부모 div 태그에 적용
+border 스타일, overflow된 img , object-fit:cover
+rounded-full overflow-hidden object-cover
+
+부모 class -> flex-row (flex-nowrap 기본값)
+자식 class ->w-full     : 반응형. 브라우저 크기가 줄어들면 width값도 줄어든다.
+
+grow - 0 (flex-grow:0;): 늘어나지 않는다.
+grow (flex-grow:1;): flex의 남은 공간을 차지한다. 
+
+w-full 로 하는 이유 : 반응형으로 했을 때 
+
+mx-auto : 부모태그에서 반응형으로 했을 때 자식태그에 ma-auto가 있으면 item이 가운데에 정렬된다.
+
+button 위치 조정하기 위한 방법
+1) button을 div로 감싼다.
+2) 부모태그인 div의 class에 속성 text-center 적용 (text-align:center)
+

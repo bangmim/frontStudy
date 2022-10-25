@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- #Modal -->
+
+    <!-- <style>
+        .container{
+            /* 화면 전체를 덮어버리기 > item창을 띄운다 */
+            position:fixed;
+            top:0;
+            left:0;
+            bottom:0;
+            right:0;
+            background-color: rgba(0 0 0 /0.2);
+        }
+        .item{
+            background-color: #fff;
+            max-width: 400px;
+            /* margin으로 가운데 위치 */
+            margin:100px auto 0;
+            padding:1rem;
+            box-sizing: border-box;
+            position:relative;
+        }
+        .btn{
+            position:absolute;
+            top:0;
+            right:0;
+            padding:0.5rem;
+        }
+    </style>
+
+    <h1>Heading</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quod doloribus odio dolorum, totam provident.
+        Quis ex consectetur culpa magni unde quisquam totam, magnam autem eaque non animi, ad praesentium?</p>
+
+    <div class="container">
+        <div class="item">
+            <span class="btn">&times;</span>
+            <h1>Modal content</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi accusamus rem eveniet sint maiores
+                nostrum, voluptatem ipsam aperiam! Id vel consequatur officia et qui dolorum tempore nisi, recusandae
+                laborum necessitatibus.</p>
+        </div>
+    </div> -->
+
+    <style>
+        .container{
+            position: fixed;
+            top:0;
+            left:0;
+            /* top,left:0 width,height:100% */
+            width:100%;
+            height:100%;
+            display: flex;
+            background-color: rgba(0 0 0 /0.2);
+            justify-content: center;
+            align-items:center;
+        }
+        .item{
+            background-color: #fff;
+            /* flex-> max-width 사용하지 않아도 자동으로 width값이 조절된다. 
+            400px 이하에서 너비가 줄어들지 않도록 하려면 -> shrink 속성 사용한다. */
+            width: 400px;
+            padding:1rem;
+            box-sizing: border-box;
+            position:relative;
+        }
+        .btn{
+            position:absolute;
+            top:-3rem;
+            right:0;
+            padding:0.5rem;
+            font-size: 2rem;
+        }
+       
+    </style>
+
+    <h1>Heading</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quod doloribus odio dolorum, totam provident.
+        Quis ex consectetur culpa magni unde quisquam totam, magnam autem eaque non animi, ad praesentium?</p>
+
+    <div class="container">
+        <div class="item">
+                <span class="btn">&times;</span>
+                <h1>Modal content</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi accusamus rem eveniet sint maiores
+                    nostrum, voluptatem ipsam aperiam! Id vel consequatur officia et qui dolorum tempore nisi, recusandae
+                    laborum necessitatibus.</p>
+        </div>
+    </div>
+    
+</body>
+
+</html>

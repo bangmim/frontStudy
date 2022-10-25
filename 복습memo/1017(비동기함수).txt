@@ -1,0 +1,68 @@
+비동기 함수 : setTimeout()
+
+#Promise 
+(1) promise class 생성하여 인스턴스 만들기
+const o=new Promise((res,rej)=>{
+    res("foo")     //비동기 작업 성공
+})
+
+const o=new Promise((res,rej)=>{
+    rej("bar")     //비동기 작업 실패
+})
+
+Promise { <pending> : 보류중
+
+(2)async function을 사용해서 인스턴스 만들기
+async function f(){
+    return "foo"         //비동기 작업의 성공
+}          
+
+
+async function f(){
+    throw "bar"          //비동기 작업의 실패
+}
+
+Promise { undefined }
+=================================================
+//(1)Promise를 사용한 에러처리 방법 
+try~catch 블록 대신 async function의 메서드 (.then(data).catch(err))를 이용한다.
+
+fetchData(null)
+.then(data=>{                   //데이터 처리(try {블록}과 유사하다)
+    console.log("data",data)
+})
+.catch(err=>{                   //에러 처리(캐치 메서드 안에서 해결한다.(catch{블록}과 유사하다))
+    console.error(err)
+})
+
+//(2)비동기 함수를 이용한 에러처리방법
+인자를 많이 받는다. (id와 callback 함수필요)
+callback 함수에서 try~catch 구문을 이용하여 에러를 처리한다.
+
+fetchData(null, (err,data)=>{
+    try{
+        if(err){
+            throw err;
+        }
+        console.log("data",data)
+    }catch(error){
+        console.error(error)
+    }
+})
+======================================
+# Promise의 async/await 문법
+// 비동기 작업을 동기 작업처럼 할 수 있게 만든다
+// 가독성면에서 가장 좋다.
+
+async function f(){
+    try{
+        // await : 비동기 작업이 끝날 때까지 기다린다.
+        // await은 async 함수 내부에서만 사용할 수 있다.
+        const data = await fetchData(1)
+        console.log(data)       //{foo:"bar"}
+    
+        console.log("다음작업")
+    }catch (error){
+        console.error(error)
+    }
+}

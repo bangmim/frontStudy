@@ -1,0 +1,123 @@
+# img
+
+img는 div태그에 감싸진다. 속성은 부모태그인 div에서 한다.
+img도 닫힘태그가 없어 children을 가질 수 없기 때문. 
+(input 속성 적용하기 위해 form을 사용했던 것과 유사) 
+
+container에 width/height 값을 지정 -> img의 width/height에는 100% 또는 inherit
+
+
+object-fit: cover;     //container에 맞게 사진이 조절된다. img태그에 적용
+overflow:hidden;        //container 밖으로 overflow 되는 부분 hidden. 부모태그 div에 적용
+
+.container:hover img{               //container에 hover했을 때 이미지
+    transform : scale(1.1, 1.1);    // scale : 확대
+}
+
+
+(1) layer용 itemdms img와 같은 부모container 안에 만든다.
+.item{
+/* layer */
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color:#fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+/* opacity:0 ->완전 투명 */
+    opacity:0;                  //item은 conatiner에 hover했을 때만 나타난다.
+    transition:.5s;             //5초 뒤에 나타난다.            
+    
+    /* 숫자 있는 속성에는 애니메이션 효과가 적용된다.
+    display : hidden -> none 은 숫자 속성이 아니기 때문에 효과 적용이 안된다. */
+}
+
+.container:hover .item{     
+    opacity:1;
+}
+
+<h1>Overlay thumbnails</h1>
+<div class="container">
+    <div class="item">Description</div>
+    <img src="../../img/puppy-1207816__480.jpg" alt="">
+</div>
+
+(2) background img 
+.container{
+    height:300px;
+    background-color: #ddd;
+    position:relative;
+
+    background-image: url(../../img/wind-energy-7342177__480.jpg);
+/* background-position:center와 background-size:cover를 하면 object-fit:cover와 같은 효과가 나타난다. */
+    background-position:center;
+    background-size:cover;
+
+    filter:grayscale(50%);
+}
+
+#Layout
+/* wrap이 필요한 이유 : background- color 적용하기 위해. 한 page 내에서 구분이 된다.*/
+/* container 크기에 맞게 height:auto 적용되었다. */
+
+.wrap{
+    background-color: #222;
+}
+
+.container{
+/* 가운데 정렬 : max-width와 margin:auto */
+    max-width:500px;
+    margin:auto;
+    
+    color:#fff;
+    padding: 3rem 1rem;
+}
+    
+<div class="wrap">
+    <div class="container">
+        <h1>Layout:row</h1>
+        <p>Lorem ipsum dolor sit amet</p>
+    </div>
+</div>
+
+(1) 반응형 만들기
+-container는 flex: img와 설명(h1,p)이 붙는다.
+-img는 width/height 값 지정 + shrink를 적용해야 img가 줄어들지 않는다.
+-모바일(기본값)에서는 flex-col (container의 flex-direction : flex-col)
+
+@media(min-width:568px){
+    .container{
+        flex-direction: row;
+    }
+}
+
+<div class="wrap">
+        <div class="container">
+            <div class="item">
+                <h1>Heading</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis adipisci aut quisquam expedita sint impedit eum. </p>
+            </div>
+            <div class="item img"></div>
+        </div>
+</div>
+
+(2)Flex with width (grid를 사용하지 않고 grid 효과)
+-container에 max-width값 지정. + margin:0 auto ->가운데 정렬됨.
+    flex-wrap 적용 : item을 감싼다. item의 width 값이 변하지 않고 그대로 적용된다.
+-item에 width값 100% 지정. padding 값 지정했다면 box-sizing:border-box 적용해야한다.
+
+@media (min-width:640px){
+    .item{
+        width:50%;
+    }
+}
+@media (min-width:768px){
+    .item{
+        width:25%;
+    }
+}

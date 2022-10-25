@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- # Dropdown (더보기) -->
+
+    <style>
+        ul{
+            padding:0;
+            margin:0;
+            list-style-type:none;
+        }
+        .container{
+            /* border:1px dashed; */
+            /* 부모태그에 relative 해도 마찬가지. */
+            position:relative;
+            /* inline-block: 필요한 만큼만 공간 차지 */
+            display: inline-block;
+        }
+        .container:hover .content{
+            display:block;
+        }
+        button{
+            padding:0.5rem;
+            cursor:pointer;
+            background-color:#555;
+            color:#eee;
+            border:none;
+            margin-bottom:0.2rem;
+            left:0
+        }
+        .content{
+            /* 부모태그인 container 바깥으로 overflow 된다. */
+            position:absolute;
+            width:200px;
+            /* h(bottom, top) required/ v(right,left) required/ blur/ spread/ color */
+            /* 수평(필수) / 수직(필수) / 흐림/ 퍼짐/ 색 */
+            /* bottom right blur color, top left, blur color */
+            box-shadow:2px 2px 3px #eee, -2px -2px 3px #eee;
+            display: none;
+            left:0;
+        }
+        ul li {
+            padding:0.5rem;
+        }
+        ul li:hover{
+            background-color: #eee;
+        }
+    </style>
+
+    <h1>Dropdown</h1>
+
+    <!-- 같은 container 안에 있어야 하는 이유 : container(button)에 hover 했을 때 item이 보일 수 있도록-->
+    <div class="container">
+        <button type="button">Dropdown </button>
+        <div class="content">
+            <ul>
+                <li>Item</li>
+                <li>Item</li>
+                <li>Item</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

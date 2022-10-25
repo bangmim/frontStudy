@@ -1,0 +1,209 @@
+break-all : 단어와 상관없이 알파벳으로 띄어쓰기가 된다. */
+        /* word-break: break-all;
+
+box-sizing: border-box;
+
+=====================================================================================
+# Display
+
+display:none;
+/* 화면상에서 보이지 않는다 */
+/* 공간을 차지하지 않는다 */
+
+# vertical-align
+inline-block 의 수직 정렬에 관한 속성
+element가 높이가 가장 긴 item의 하단(baseline)을 기준으로 수직정렬된다.
+
+# white-space
+element의 white-space(공백) 처리하기
+
+/* element 안의 content가 필요할 때 감싸진다 */
+            /* \n(줄바꿈)을 반영한다 */
+            white-space: pre-line;
+
+# visibility
+
+/* 화면상 보이지 않는다 */
+        /* element가 공간은 계속 차지하고 있다. */
+        visibility: hidden;
+
+# overflow
+/* 넘치는 부분을 숨긴다 */
+       overflow: hidden; 
+
+/* x축과 y축 모두 스크롤을 만든다 */
+        overflow: scroll;
+
+/* 넘치는 부분만 스크롤을 만든다 */
+        overflow: auto;
+
+# width
+
+/* 600px 이상 늘어나지 않는다 */
+        max-width:600px;
+
+/* 600px 이하로 줄어들지 않는다. */
+        min-width:600px;
+
+#height
+/* 최소높이 */
+        min-height:50px;
+
+# position -->
+    <!-- element의 위치 -->
+    <!-- static, relative, absolute,fixed 
+
+#Transform
+translate(이동), scale(크기), rotate(회전)
+translate(x,y) */
+        /* item이 원래 위치 기준으로 이동한다 */
+        /* transform:translate(25px,50px) */
+
+        /* element 자신의 크기에 상대적이다 */
+        transform: translateX(50%);
+
+.container{
+    position:relative
+}
+.absolute{
+    position:absolute;
+    /* 부모태그 기준 */
+    top:50%;
+   left:50%;
+    /* 자신element의 크기 기준 */
+    transform:translate(-50%, -50%)
+}
+
+<div class="container">
+    <div class="absolute"></div>
+</div>
+
+ /* 10% 커진다 */
+    /* transform:scale(1.1,1.1) */
+
+transform: rotate(45deg);
+
+-------------------------------
+ # Float(Layout)
+ /* display는 여전히 block */
+    /* item에 속성을 준다. */
+    /* 반면)flex는 container에 속성을 준다. */
+    float:left;     //item이 옆으로 붙는다.
+
+/* clearfix */ : 더이상 붙지 않는다.
+        .float-container::after{
+            /* pseudo element : content 있어야 적용된다. */
+            content:"";
+            display:block;
+            clear:left;
+        }
+----------------------
+# Flex
+flex-container 속성
+1. flex-direction: flexible item의 방향
+row(기본값) | row-reverse | column | column-reverse
+
+2. flex-wrap:flexible item을 wrap or not
+nowrap(기본값) | wrap | wrap-reverse
+
+3. justify-content: flexible item의 수평정렬
+flex-start(기본값) | flex-end | center | space-between | space-around | space-evenly
+
+4. align-items: flextible item의 수직 정렬
+strentch(기본값) | center | flex-start | flex-end | baseline
+---------------------------------------------------------------
+flex-item 속성
+
+1. order : flexible item의 순서
+0(기본값) | number
+
+2. flex-grow : flexible item의 넓이를 증가시키는 것
+0(기본값) | number
+
+3.flex-shrink : flexible item의 넓이를 감소시키는 것
+1(기본값) | number
+
+4. flex-basis : flexible item의 넓이
+auto(기본값) | number
+
+5. align-self: 특정한 flexible item의 수직정렬
+auto(기본값) | stretch | center | flex-start | flex-end | baseline
+-----------------------------------------------------------------
+flex item을 행방향으로 배열한다 
+flex-direction: row
+
+flex item을 열방향으로 배열한다 
+flex-direction: column;
+
+설정한 item의 width값이 줄어들지 않는다 
+/* flex container가 flex item을 감싼다 */
+flex-wrap:wrap;
+
+container의 width가 줄어들면 설정한 width 값이 줄어든다. 
+/* flex container가 flex item을 감싸지 않는다 */
+flex-wrap: nowrap;
+
+# justify-content > 부모container에 적용 (row방향/가로정렬)
+justify-content:flex-start;
+justify-content:center;
+justify-content: space-between;
+
+# Align-item > 부모container에 적용 (column방향/세로정렬)
+flex container의 높이를 다 차지한다 
+align-items: stretch;
+
+item의 contents에 필요한 만큼만 높이를 차지한다 
+align-items:baseline; 
+align-items: flex-end;
+
+flex container의 수직에서 가운데에 위치한다
+align-items:center;
+
+# order
+.item:nth-child(2) {
+/* 나머지는 기본값 0으로 순서대로 출력 > 이후 2번 item이 마지막으로 출력 */
+    order: 2;           //순서 : 1 3 4 2
+}
+
+ <div class="flex">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </div>
+
+# flex-grow
+.item:nth-child(2){
+/* flex item이 container의 남는 공간을 다 차지한다 */
+flex-grow:1;
+}
+
+.item{
+/* flex container를 똑같은 넓이로 나누어 갖는다. */
+flex-grow:1;
+}
+
+/* item이 줄어들지 않는다. */
+flex-shrink:0;
+
+/* item들이 동일한 너비의 비율을 유지한다. */
+flex-basis:33.33333%;
+box-sizing:border-box
+
+#align-items > 부모container에 적용
+.flex{
+    align-items:center;        
+}
+# aling self > item에 적용
+.item:last-child{
+    /* flex container의 align-items 속성에 덮어쓰기가 된다. */
+    /* flex-end: flextible item에 container의 밑에 위치한다 */
+     align-self:flex-end;
+}
+<div class="flex">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+</div>
+1,2,3 item 은 container의 가운데 , 4 item은 container의 밑에 위치

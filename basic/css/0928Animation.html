@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- # Animation  -->
+
+  <!-- Spinner -->
+
+  <!-- <style>
+        .spinner{
+            width:50px;
+            height:50px;
+            border:5px solid;
+            /* transparent: 투명한 */
+            border-top: 5px solid transparent;
+            border-radius: 50%;
+            /* animation-name 정의하기 */
+            animation-name:spin;
+            /* 지속시간 */
+            animation-duration:2s;
+            /* 반복횟수 : infinite(무한) */
+            animation-iteration-count:infinite;
+            /* 끊김없이 돌아간다. infinite에 잘 어울리는 속성 */
+            animation-timing-function:linear;
+        }
+        @keyframes spin{
+            from{
+                transform:rotate(0deg);
+            }to {
+                transform:rotate(360deg);
+            }
+        }
+
+    </style>
+
+    <h1>Spinner</h1>
+    <div class="spinner"></div> -->
+
+  <!-- # Progress Bar -->
+
+  <!-- <style>
+        .container{
+            width:200px;
+            height:10px;
+            background-color: #ddd;
+        }
+        .item{
+            height:100%;
+            background-color: #555;
+            /* shorthand로 작성 가능. 
+            animation : name, duration */
+            /* animation : name / duration / timing-function / delay / iteration-count/ direction / fill-mode / play-state */
+            /* animation:fill 2s; */
+            animation : fill 2s ease 0s 1 normal none running;
+        }
+        @keyframes fill{
+            from{
+                width:0;
+            }to {
+                width:100%;
+            }
+        }
+    </style>
+
+    <h1>Progress Bar</h1>
+
+    <div class="container">
+        <div class="item"></div>
+    </div> -->
+
+  <!-- <style>
+        .container{
+            width:50px;
+            height:50px;
+            /* border:1px dashed; */
+            display: flex;
+            flex-direction:column;
+            /* flex-direction-column 방향에서 justify-content가 수직정렬이 된다. -> space-between : item 사이에 같은 높이만큼 공간이 생긴다.*/
+            justify-content: space-between;
+        }
+        .container .item{
+            width:50px;
+            height:4px;
+            background-color: #222;
+            transition:0.5s;
+        }
+        .container:hover .item:nth-child(2){
+            opacity:0;
+        }
+        .container:hover .item:first-child{
+            transform: translateY(23px) rotate(45deg);
+        }
+        .container:hover .item:last-child{
+            transform: translateY(-23px) rotate(-45deg)
+        }
+    </style>
+
+    <div class="container">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div> -->
+
+  <!-- # 태양계 행성 -->
+
+  <!-- <style>
+        body{
+            position:relative;
+            height:100vh;
+            margin:0;
+            background-color: black;
+        }
+        body>.item{
+            width:300px;
+            height:300px;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%, -50%);
+            background-color:red;
+            box-shadow: 0 0 50px 10px orangered;
+            border-radius: 50%;
+        }
+        .container{
+            width:400px;
+            height:400px;
+            border:1px dashed;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            animation:orbit 10s infinite linear;
+        }
+        .container .item{
+            width:10px;
+            height:10px;
+            background-color: blue;
+            box-shadow: 0 0 50px 10px skyblue;
+            border-radius: 50%;
+        }
+        @keyframes orbit{
+            from{
+                transform:translate(-50%,-50%) rotate(0deg)
+            } to{
+                transform:translate(-50%,-50%) rotate(360deg)
+            }
+        }
+    </style>
+
+    <div class="item sun"></div>
+    <div class="container earth">
+        <div class="item"></div>
+    </div> -->
+  <!-- ------------------- -->
+  <!-- # delay -->
+  <!-- <style>
+    body {
+      display: flex;
+      background-color: #333;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      /* display:flex; */
+      display: inline-flex;
+      /* border:1px dashed; */
+      /* grid 뿐만 아니라 flex도 가능하다 */
+      gap: 0.5rem;
+      /* 수직정렬 하면 위아래로 animation이 적용된다. */
+      align-items: center;
+    }
+
+    .item {
+      width: 25px;
+      height: 50px;
+      background-color: #fff;
+      /* border:1px dashed ; */
+      animation-name: wave;
+      animation-duration: 0.6s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      /* 애니메이션의 방향을 처음에서 끝으로 왕복한다. */
+      /*animation-direction
+            normal : from->to 방향으로만
+            reverse: to->from
+            alternate : from->to->from
+            alternate-reverse : to->from->to */
+      animation-direction: alternate;
+    }
+
+    .item:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .item:last-child {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes wave {
+      from {
+        height: 50px;
+      }
+
+      to {
+        height: 150px;
+      }
+    }
+  </style>
+
+  <div class="container">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div> -->
+
+<!-- #1003 -->
+
+<style>
+  
+  .item{
+    position:fixed;
+    top:-10%;
+    animation-name:fall;
+    animation-duration: 5s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+  }
+  .item:nth-child(1){
+    left:0;
+    animation-delay:1s;
+  }
+  .item:nth-child(2){
+    left:10%;
+    animation-delay:2.5s;
+
+  }
+  .item:nth-child(3){
+    left:25%;
+    animation-delay:1s;
+
+  }
+  .item:nth-child(4){
+    left:75%;
+    animation-delay:0s;
+  }
+  .item:nth-child(5){
+    left:90%;
+    animation-delay:1.5s;
+  }
+  @keyframes fall{
+    from{
+      top:-10%;
+    }to{
+      top:100%;
+    }
+  }
+
+</style>
+
+
+<div class="container">
+  <div class="item">Item</div>
+  <div class="item">Item</div>
+  <div class="item">Item</div>
+  <div class="item">Item</div>
+  <div class="item">Item</div>
+</div>
+
+
+
+</body>
+
+</html>

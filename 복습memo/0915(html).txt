@@ -1,0 +1,47 @@
+#day02 > 0715
+
+ctrl + b : 옆 메뉴바 보이기/없애기
+shift + tab : 들여쓰기 삭제
+ctrl + k + f : 자동 정렬
+ctrl + Fn + <-(방향키) : 맨 앞으로 커서 이동
+Fn + <- / -> : 문장의 끝과 끝으로 이동
+ctrl + backdpace/Delete : 공백을 단어 전까지 모두 제거
+ctrl + <-/-> : 단어 단위로 커서 이동
+---------------------------------------------------------------
+ul 과 li는 함께 
+
+div class="article": div가 article을 대체한다
+=====================================================
+> 0718
+span : 문자열 안에서 특정한 효과를 줄 때 사용한다
+b : bold, 태그로 text bold 할 수 있다
+
+table : 표, 행과 열로 구성되어 있다.
+tr: table row (행)
+th : table head, 제목
+td: table data
+
+form : 양식, 서버에 제출하는 데이터 예) 로그인, 회원가입, Contact 등
+    label과 input은 함께
+label : input에 대한 설명을 입력한다.
+input type="text": 사용자로부터 데이터를 입력받는다 (type="text" 기본값)
+
+select name= "": 유저로부터 데이터를 입력받는다
+option value="": 유저가 선택할 수 있는 옵션
+--name, vlue는 서버에서 데이터를 처리하기 위한 속성이다
+
+input:radio 로 태그 입력이 가능하다.
+input type="radio" name="A" id="B": input>label 들 중에서 선택을 할 수 있다. name 값이 같으면 name 중에서는 하나만 선택 가능 
+    label for="B" name="A" : label for 값이 input id 값과 같으면 공란이 아닌 label의 text를 클릭해도 선택되는 효과가 있다.
+
+inupt:c 로 태그 입력이 가능하다.
+input type = "checkbox"
+
+a: anchor 링크를 만든다
+href : element의 속성 (attribute) 이동할 주소(id 또는 url)를 입력한다
+section의 id 설정하여 동일한 값을 a href에 # + 값 으로 적는다 > 해당 페이지로 이동
+target=_blank : 새로운 창에서 링크를 연다 -->
+target=_self : 현재 창에서 링크를 연다. 기본값
+
+<a href="#QR" target="_self> : QR 페이지로 이동 (_self현재창에서)
+<section id="QR>

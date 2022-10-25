@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- header : semantic tag (element의 이름이 목적을 의미한다) -->
+  <header>
+    <h1>현대 자동차 공식 홈페이지</h1>
+    <!-- p: paragraph, 문장을 작성한다 -->
+    <p>당신의 모든 세상</p>
+  </header>
+
+  <!--nav : navigation, 메뉴  -->
+  <nav>
+    <h2>메뉴</h2>
+    <!-- ul: unordered list , 순서가 중요하지 않은 리스트를 만든다. -->
+    <ul>
+      <!-- li : list item, 리스트에 아이템을 만든다. -->
+      <li>
+        <!-- a: anchor 링크를 만든다 -->
+        <!-- non sementic로 대체할 수 없다 -->
+        <!-- href : element의 속성 (attribute) 이동할 주소(id 또는 url)를 입력한다. -->
+        <!-- section의 id 설정하여 동일한 값을 a href에 # + 값 으로 적는다 > 해당 페이지로 이동.-->
+        <a href="#showcase">현대자동차 쇼케이스</a>
+      </li>
+      <li>
+        <a href="#model">모델 소개</a>
+      </li>
+      <li>
+        <a href="#table">모델 비교표</a>
+      </li>
+      <li>
+        <a href="#contact">Contact</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- hr: horizontal rule : 수평선 -->
+  <!-- 닫힘 태그가 없으면 컨텐츠(태그 안에 text 또는 element)를 가질 수 없다 -->
+  <hr>
+
+  <!-- main : main content(내용)가 주로 온다 -->
+  <main>
+    <!-- 현대자동차 쇼케이스 -->
+    <section id="showcase">
+      <h2>현대자동차 쇼케이스</h2>
+      <!-- iframe : 다른 html을 html문서 안에 추가한다 -->
+      <iframe width="428" height="242" src="https://www.youtube.com/embed/_ornRl7k3Ks"
+        title="IONIQ 6 내가 만드는 세상 – 매니페스토 편 현대자동차" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </section>
+    <!-- 모델 소개 -->
+    <section id="model">
+      
+      <article>
+        <h2>모델 소개</h2>
+        <h1>제네시스</h1>
+        <!-- div : divide, 다양한 목적으로 사용할 수 있다. 대표적인 nond-sematic tag -->
+        <div>
+          <!-- img : 이미지를 추가한다. src(source) : 이미지의 경로, alt(alternative) : 이미지에 대한 설명 -->
+          <!-- 이미지에 source를 추가하는 방법 : 절대경로와 상대경로가 있다.
+           -->
+          <!-- 절대경로 : root(c:드라이브)부터 접근한다. -->
+          <img src="C:\Users\amd_b\OneDrive\바탕 화면\프론트엔드 복습\img\car-1376190_960_720.jpg" alt="제네시스" width="400">
+          <!-- br: breakung rule (줄바꿈) -->
+          <p>
+            <!-- span : 문자열 안에서 특정한 효과를 줄 때 사용한다 -->
+            <span style="font-weight:bold">
+              Lorem ipsum,</span> <br> dolor sit amet consectetur adipisicing elit.  Quaerat,
+            </p>
+          </div>
+        </article>
+        
+        <article>
+          <h3>스타리아</h3>
+          <!-- 상대경로 : 현재 파일의 위치를 기준으로 접근한다 -->
+          <div>
+            <img src="../../img/car-g30622cf6f_1920.jpg" alt="스타리아" width="400" >
+            <p>
+              <!-- b : bold, 태그로 text bold 할 수 있다. -->
+              <b>explicabo laboriosam</b>
+              tempora officiis, 
+              <br>
+              numquam cumque pariatur deserunt nemo atque eaque reprehenderit, 
+              <br> 
+              veritatis nostrum?
+            </p>
+          </div>
+      </article>
+
+      <article>
+        <h3>캐스퍼</h3>
+        <div>
+          <img src="../../img/bmw-g23501585d_1280.png" alt="캐스퍼" width="400">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis repellendus <br> quidem saepe doloremque nobis officia ea, reprehenderit eos sint quis
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <!-- 모델 비교표 -->
+    <section id="table">
+      <h2>모델 비교표</h2>
+
+      <!-- table : 표, 행과 열로 구성되어 있다. -->
+      <table border="3">
+        <!-- tr: table row (행) -->
+        <tr>
+          <!-- th : table head, 제목 -->
+          <th>모델명</th>
+          <th>컬러</th>
+          <th>가격</th>
+        </tr>
+        <tr>
+          <!-- td: table data -->
+          <td>제네시스</td>
+          <td>블랙,화이트</td>
+          <td>15/1</td>
+          <td>1000원</td>
+        </tr>
+        <tr>
+          <td>스타리아</td>
+          <td>실버,블랙</td>
+          <td>10/1</td>
+          <td>4000원</td>
+        </tr>
+        <tr>
+          <td>캐스퍼</td>
+          <td>카키,레드,화이트</td>
+          <td>13/1</td>
+          <td>800원</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <!-- 오시는 길 -->
+      <div>
+        <h2>오시는 길</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25322.06962410636!2d126.71287493955079!3d37.50181610000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b7dadae102b2f%3A0xe60e9558b9fd9172!2z7ZiE64yA7J6Q64-Z7LCoIOu2gO2PieygkA!5e0!3m2!1sko!2skr!4v1663466793561!5m2!1sko!2skr" width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+      <!-- 연락하기 -->
+      <div>
+        <!-- form : 양식, 서버에 제출하는 데이터 예) 로그인, 회원가입, Contact 등 -->
+        <form action="">
+          <h2>연락하기</h2>
+          <div>
+            <!-- label : input에 대한 설명을 입력한다. 대체가능 -->
+            <label for="">성함</label>
+            <!-- input: 사용자로부터 데이터를 입력받는다 -->
+            <input type="text" placeholder="이름을 입력하세요">
+          </div>
+          <div>
+            <label for="">이메일</label>
+            <input type="text" placeholder="username@example.com">
+          </div>
+          <div>
+            <label for="">성별</label>
+            <!-- select: 유저로부터 데이터를 입력받는다 -->
+            <!-- option: 유저가 선택할 수 있는 옵션 -->
+            <!-- name, vlue는 서버에서 데이터를 처리하기 위한 속성이다 -->
+            <!-- id: JavaScript에서 주로 사용한다 -->
+            <select name="gender" id="">
+              <option value="male">남자</option>
+              <option value="female">여자</option>
+              <option value="private">비공개</option>
+            </select>
+          </div>
+          <div>
+            <h3>관심분야</h3>
+            <!-- radio > name 값이 같으면 하나만 선택할 수 있다. -->
+            <input id="car" type="radio" name="interasts" value="자동차 구매">
+            <!-- label>for에는 input>id 와 같은 값을 적어준다. -> 공란이 아닌 input의 text를 선택해도 선택되는 효과 -->
+            <label for="car">자동차 구매</label>
+            <input id="branch" type="radio" name="interasts" value="대리점 개설">
+            <label for="branch">대리점 개설</label>
+          </div>
+          <br>
+          <div>
+            <textarea name="message" id="" cols="30" rows="10" placeholder="내용을 입력하세요"></textarea>
+          </div>
+          <div>
+            <!-- input:c 로 태그 입력 가능하다 -->
+            <!-- agree로 지정 > 사용자가 체크하면 동의로 해석함 -->
+            <!-- checked : 체크되어있는게 기본값 -->
+            <input type="checkbox" name="agree" id="" checked>
+            <label for="">
+              <!-- target=_blank : 새로운 창에서 링크를 연다 -->
+              <!-- target=_self : 현재 창에서 링크를 연다. 기본값 -->
+             <a href="https://www.google.com/" target="_self">개인정보 처리방침</a>에 동의합니다</label>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <hr>
+  <!-- footer : 웹페이지 가장 하단에 위치한다. -->
+  <!-- 웹 페이지의 기타 정보들 (sns주소, 회사의 정책, 이용 약관 등) -->
+  <footer>
+    <!-- small : 기본 폰트 사이즈보다 약간 작다 -->
+    <!-- &copy : 엔티티 네임 (Entity name) -->
+    <!-- &(ampersand) + name -->
+    <!-- html내에서 특수한 문자를 사용할 수 있다 -->
+    <small>2022 &copy; 현대자동차</small>
+    <!-- 엔티티 넘버 (Entity number) -->
+    <!-- &# + number -->
+    <!-- html 내에서 특수한 문자를 사용할 수 있다 -->
+    <p>&#128516</p>
+    <!-- order list : 리스트에 자동으로 번호가 붙는다 -->
+    <!-- <ol>
+      <li>이용약관</li>
+      <li>개인정보 처리방침</li>
+      <li>사이트맵</li>
+    </ol> -->
+  </footer>
+
+</body>
+</html>

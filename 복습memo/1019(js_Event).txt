@@ -1,0 +1,12 @@
+# User's action
+
+element.addEventListener(event,callback) : element에 event 발생시 callback을 실행한다.
+event: click, keyup, scroll, submit, change, ...
+
+    button.addEventListener("click",(e)=>{      //button에 click 발생시 (e)callback :alert()을 실행한다
+        alert()     //경고창
+
+        console.log(e)  //PointerEvent  (event object)
+        console.log(e.target)   //button    //event가 발생한 element
+
+# preventDefault

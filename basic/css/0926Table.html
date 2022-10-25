@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- <style>
+        table{
+            /* 기본값 */
+            /* border-collapse: separate; */
+            border-collapse: collapse;
+        }
+        td[scope="row"]{
+            font-weight: bold;
+        }
+        th,td{
+            border:1px solid black;
+            padding:0.5rem;
+        }
+    </style>
+
+    <h1>Table:Basic</h1>
+
+    <table>
+        <thead>
+            <tr>
+                th:굵게 표시된다
+                scope="col": 행(col)중에서 가장 첫번째
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Lst</th>
+                <th scope="col">Handle</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                scope="row" : 열(row) 중에서 가장 첫번째
+                <td scope="row">1</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <td scope="row">2</td>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <td scope="row">3</td>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+            </tr>
+        </tbody>
+
+
+
+    </table> -->
+
+    <!-- <style>
+        table{
+            /* table에 border 적용하기 위해 필요 */
+            border-collapse:collapse;
+        }
+        thead tr{
+            border-bottom: 1px solid;
+        }
+        td[scope=row]{
+            font-weight: 700;
+        }
+        th, td{
+            padding:0.5rem;
+        }
+        /* nth-chile() doo(홀수), even(짝수) */
+        tbody tr:nth-child(odd){
+            background-color: #f1f1f1;
+        }
+    </style>
+
+    <h1>Table: Striped rows</h1>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Lst</th>
+                <th scope="col">Handle</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td scope="row">1</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <td scope="row">2</td>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <td scope="row">3</td>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+            </tr>
+        </tbody>
+    </table> -->
+
+    <!-- <style>
+        table{
+            border-collapse: collapse;
+            caption-side:bottom;
+        }
+        /* thead의 tr */
+        thead tr{
+            border-bottom:1px solid;
+        }
+        td[scope=row]{
+            font-weight:bold;
+        }
+        th, td{
+            padding:0.5rem;
+        }
+        tbody tr{
+            border-bottom:1px solid #eee;
+        }
+        tbody tr:last-child{
+            border:none
+        }
+        tfoot{
+            border-top: 1px solid;
+            border-bottom:1px solid #eee;
+        }
+        caption{
+            text-align:left;
+        }
+    </style> -->
+
+    <!-- <h1>Table: Table footer and caption</h1>
+    <table>
+        caption 위치 : thead 위
+        <caption>List of users</caption>
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Lst</th>
+                <th scope="col">Handle</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td scope="row">1</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <td scope="row">2</td>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <td scope="row">3</td>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <td>Footer</td>
+            <td>Footer</td>
+            <td>Footer</td>
+            <td>Footer</td>
+        </tfoot>
+    </table> -->
+
+    <!-- <style>
+        table{
+            border-collapse:collapse;
+        }
+        thead{
+            border-bottom:1px solid;
+        }
+        tbody tr{
+            border-bottom:1px solid #eee;
+        }
+        td[scope=row]{
+            font-weight: bold;
+        }
+        th, td{
+            padding:0.5rem;
+            text-align:center;
+        }
+        .table-responsive{
+            overflow-x: scroll;
+        }
+        /* 스크롤바 안보이게하는 방법 */
+        /* Crome, Safari, Opera */
+        .table-responsive::-webkit-scrollbar{
+            display:none;
+        }
+        /* IE and Edge */
+        .table-responsive{
+            -ms-overlow-style:none;
+            scrollbar-width:none;
+        }
+    </style>
+
+    <h1>Table: Responsive</h1>
+
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td scope="row">1</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                </tr>
+                <tr>
+                    <td scope="row">2</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                </tr>
+                <tr>
+                    <td scope="row">3</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                </tr>
+                
+            </tbody>
+    
+        </table>
+    </div> -->
+
+    <!-- <style>
+        table{
+            /* 부모태그 없으므로 body의 100% */
+            width:100%; 
+            border-collapse:collapse;
+            /* 같은 너비로 fixed */
+            table-layout: fixed;
+        }
+        th, td{
+            padding:0.5rem;
+            border:1px solid #eee;
+        }
+    </style> -->
+
+    <!-- <h1>Table with table-layout: fixed</h1> -->
+    <!-- <table> -->
+        <!-- 1)width 고정 너비 지정 : thead 위에 collumn의 개수만큼 colgroup 적는다.-->
+        <!-- <colgroup>
+            <col width="40%">
+            <col width="40%">
+            <col width="20%">
+        </colgroup> -->
+        <!-- <thead> -->
+            <!-- <tr> -->
+                <!-- 2)width 고정 너비 지정 : thead의 th에 width값을 지정한다. -->
+                <!-- <th width="40%">Song</th>
+                <th width="40%">Artist</th>
+                <th width="20%">Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>The Sliding Mr.bones (Next STop, Potterscille)</td>
+                <td>Malcolm Lockyer</td>
+                <td>1961</td>
+            </tr>
+            <tr>
+                <td>Witchy Woman</td>
+                <td>The Eagles</td>
+                <td>1972</td>
+            </tr>
+            <tr>
+                <td>Shining Star</td>
+                <td>Earth, Wind, and Fire</td>
+                <td>1975</td>
+            </tr>
+        </tbody>
+    </table> -->
+
+</body>
+
+</html>

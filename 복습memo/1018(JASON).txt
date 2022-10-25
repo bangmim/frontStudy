@@ -1,0 +1,20 @@
+ # JSON
+// JavaScript Object Notation (JavaScript 객체 표기법)
+// JavaScript 객체를 저장하거나 전송하기 위한 텍스트 포맷
+// object를 표기하기 위해 텍스트 포맷으로의 변경이 필요하다. <형태 : `{오브젝트("key값도 쌍따옴표로 묶는다.":"value")}`로 감싼다.
+
+const o={foo:"bar"}
+const json=`{"foo":"bar}`       
+
+console.log(o)          //object
+console.log(json)       //json포맷(텍스트)
+
+// JSON.stringfy(object) : Object를 json 포맷으로 변환한다.
+const r= JSON.stringify(o)
+console.log(r)
+
+const json=`{"foo":"bar"}`
+// JSON.parse(json) : JSON포맷을 Object로 변환한다.
+const r=JSON.parse(json)
+
+console.log(r)

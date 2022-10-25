@@ -1,0 +1,193 @@
+# navigation
+
+1   a 태그의 padding 적용 : 클릭할 수 있는 영역이 넓어진다.
+2   /* inline-block일 때 가운데 정렬 속성 */
+            vertical-align: middle;
+3    /* height:100% 랑 똑같은 효과 */
+            bottom:0;
+4   ul 기본값 제거 
+    ul{
+        list-style-type: none;
+        margin:0;
+        padding:0;
+    }
+
+#Animation
+(1)#Spinner : 하나의 div에서 border-top : transparent + border-radius:50%
+.spiner{
+ /* transparent: 투명한 */
+    border-top: 5px solid transparent;
+/* animation-name 정의하기 */
+    animation-name:spin;
+/* 지속시간 */
+    animation-duration:2s;
+/* 반복횟수 : infinite(무한) */
+    animation-iteration-count:infinite;
+/* 끊김없이 돌아간다. infinite에 잘 어울리는 속성 */
+    animation-timing-function:linear;
+}
+
+/* @keyframes (animation-name){
+    from {
+        
+    } to{
+
+    }
+} */
+
+@keyframes spin{
+    from{
+        transform:rotate(0deg);
+    }to {
+        transform:rotate(360deg);
+    }
+}
+
+(2)# Progress Bar : container 안에 item (div 2개)
+.container{
+            width:200px;
+            height:10px;
+            background-color: #ddd;
+        }
+.item{
+    height:100%;
+    background-color: #555;
+        /* shorthand로 작성 가능. 
+    animation : name, duration */
+        /* animation : name / duration / timing-function / delay / iteration-count/ direction / fill-mode / play-state */
+    /* animation:fill 2s; */
+    animation : fill 2s ease 0s 1 normal none running;
+    }
+@keyframes fill{
+    from{
+        width:0;
+    }to {
+        width:100%;
+    }
+}
+#햄버거버튼 > X로 만들기 : container 안에 item 3개 / container :display flex, flex-col 적용 + item height값 적용(햄버거 모양 만들기) -> translate로 x형태 만들기
+
+.container{
+    width:50px;
+    height:50px;
+    display: flex;
+    flex-direction:column;
+     /* flex-direction-column 방향에서 justify-content가 수직정렬이 된다. 
+        -> space-between : item 사이에 같은 높이만큼 공간이 생긴다.*/
+    justify-content: space-between;
+}
+
+ .container .item{
+            width:50px;
+            height:4px;
+            background-color: #222;
+            transition:0.5s;
+        }
+
+//X모양 만들기
+.container:hover .item:nth-child(2){
+            opacity:0;
+        }
+.container:hover .item:first-child{
+            transform: translateY(23px) rotate(45deg);
+        }
+.container:hover .item:last-child{
+            transform: translateY(-23px) rotate(-45deg)
+        }
+
+# 태양계 행성
+<style>
+        sun{
+            width:300px;
+            height:300px;
+            position:absolute;
+            /* 가운데 위치시키기 : top,left-50%, trasform-translate(-50%,-50%) */
+            top:50%;
+            left:50%;
+            transform:translate(-50%, -50%);
+            background-color:red;
+            box-shadow: 0 0 50px 10px orangered;
+            border-radius: 50%;
+        }
+        .container{
+            width:400px;
+            height:400px;
+            border:1px dashed;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            /* 실제 움직이는 container에 animation */
+            animation:orbit 10s infinite linear;
+        }
+        .container .item{       // earth 표시 > 실제 움직이는 것은 container . item이 아닌 container!
+            width:10px;
+            height:10px;
+            background-color: blue;
+            box-shadow: 0 0 50px 10px skyblue;
+            border-radius: 50%;
+        }
+        @keyframes orbit{
+            from{
+                transform:translate(-50%,-50%) rotate(0deg)
+            } to{
+                transform:translate(-50%,-50%) rotate(360deg)
+            }
+        } 
+<div class="sun"></div>
+<div class="container earth">
+    <div class="item"></div>
+</div>
+
+(3) # delay : container의 item animation에 delay를 주면서 움직이는 효과가 나타난다.
+
+.container {
+      display: inline-flex;         //flex로 해도 된다.
+      /* grid 뿐만 아니라 flex도 가능하다 */
+      gap: 0.5rem;
+      /* 수직정렬 하면 위아래로 animation이 적용된다. */
+      align-items: center;
+}
+
+.item {
+    width: 25px;
+    height: 50px;
+    background-color: #fff;
+
+    animation-name: wave;
+    animation-duration: 0.6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    /* 애니메이션의 방향을 처음에서 끝으로 왕복한다. */
+    animation-direction: alternate;
+
+    /*
+    animation-direction
+    normal : from->to 방향으로만
+    reverse: to->from
+    alternate : from->to->from
+    alternate-reverse : to->from->to 
+    */
+}
+
+.item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.item:last-child {
+    animation-delay: 0.4s;
+}
+
+@keyframes wave {
+    from {
+    height: 50px;
+    }to {
+    height: 150px;
+    }
+}
+
+<div class="container">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+</div>

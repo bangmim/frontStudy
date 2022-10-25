@@ -1,0 +1,57 @@
+# header -> 메뉴와 search가 같이 있는것
+div 태그 안에 메뉴div, form-input
+부모 태그에 flex, justify-between(양 끝으로 지정), items-center 적용.
+(#justify : width에서 정렬/ items : height에서 정렬)
+(justify-between(양 끝으로 지정) => float-left, float-rigth로 지정할 수도 있다.)
+
+<div class="sticky top-0 w-full z-10">
+    <div class="flex h-12 justify-between items-center bg-gray-500 px-5">
+        <h1 class="text-xl text-white">Heading</h1>     //메뉴
+        <form action="" class="h-3/5">                  //검색
+            <input type="text" class="w-52 h-full px-12 outline-none" placeholder="Search">
+        </form>
+    </div>
+</div>
+
+
+# 사이드바 + 네비
+네비 고정 > sticky 또는 fixed div로 감싼다.
+main 에서 > 사이드바의 너비만큼 마진 적용해야한다.
+sticky : margin 안줘도 된다. 공간을 차지하고 있다. 스크롤 이전에는 static(block이면 block, flex면 flex) -> 스크롤 이후 fixed
+fixed : margin 줘야한다.
+
+#tailwind에서 dropdown
+
+.container:hover .item {
+    display:block
+}
+=
+.container 역할(button과 menu를 감싼 div) div에 group을 적는다.
+menu div에 hidden group-hover:block 적용한다.
+
+<div class="mb-3 flex justify-end">
+    <div class="relative group">
+        <button class="border p-2 bg-gray-600 text-white hover:bg-gray-700 block">Dropdown</button>
+        <div class="absolute right-0 w-48 bg-white shadow hidden group-hover:block">
+            <a href="" class="block p-2 hover:bg-gray-100">Menu</a>
+            <a href="" class="block p-2 hover:bg-gray-100">Menu</a>
+            <a href="" class="block p-2 hover:bg-gray-100">Menu</a>
+        </div>
+    </div>
+</div>
+
+#grid
+
+<!-- grid-cols : 기본 행의 개수 -->
+<div class="grid-cols-3">
+/* span : 한 칸이라고 생각 */
+<!-- col-span: 열 병합(옆으로 병합)/ row-span : 행 병합(아래로 병합) -->
+        <div class="row-span-2 col-span-2 border">1</div>
+</div>
+scope이 적용된 것 = 제목  : th에는 모두 적혀있어야한다.
+
+-반응형 : hidden lg:block
+
+
+## grid : 병합에 용이하다.
+## flex : 병합하려면 wrap하여 width값 지정! 

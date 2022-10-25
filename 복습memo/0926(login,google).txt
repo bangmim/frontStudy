@@ -1,0 +1,101 @@
+# form
+1   display: block인 element를 가운데 위치시키는 방법 -> margin: (top)100, (right)auto (bottom)0, (left auto) 
+2   max-width를 사용하여 너비가 줄었을 때 scroll이 생기지 않도록 한다.
+3   padding 적용으로 width값이 변경됨 > box-sizing
+
+# input
+1   margin:width/height 값에 영향을 주지 않는다. element 바깥
+2   input > outline: 클릭했을 때 외곽선 
+            outline:none;
+3   display, width, height 설정 안하면 필요한 만큼만 공간을 차지한다
+4   /* 가로 정렬 */
+    justify-content: center;
+    /* 세로 정렬 */
+    align-items:center;
+5    닫힘 태그 없는 input > children 가질 수 없다.
+    form과 같은 크기로 만들어 form 에서 태그 적용 : form : width/height 값 지정-> input: width/height:100% 또는 width/height: inherit
+
+# table
+
+1   th:굵게 표시된다
+2   scope="col": 행(col)중에서 가장 첫번째
+    scope="row" : 열(row) 중에서 가장 첫번째
+3   table에 border 적용하기 위해 필요 
+    border-collapse:collapse
+4   nth-chile() doo(홀수), even(짝수) 
+        tbody tr:nth-child(odd){
+            background-color: #f1f1f1;
+        }
+5   table에만 스크롤 적용 > table을 div로 감싼다 -> div에서 overflow-X:scroll
+    /* 스크롤바 안보이게하는 방법 */
+        /* Crome, Safari, Opera */
+        .table-responsive::-webkit-scrollbar{
+            display:none;
+        }
+        /* IE and Edge */
+        .table-responsive{
+            -ms-overlow-style:none;
+            scrollbar-width:none;
+        }
+6 table width 고정 너비 지정 -> table-layout : fixed -> 1)colgroup 또는 2) th에 width값 지정
+     <table> 
+        1) thead 위에 colgroup 태그 : collumn의 개수만큼 colgroup 적고 width 속성 적용
+         <colgroup>
+            <col width="40%">
+            <col width="40%">
+            <col width="20%">
+        </colgroup> 
+        <thead>
+             <tr> 
+        2)  thead의 th에 width값을 지정
+                <th width="40%">Song</th>
+                <th width="40%">Artist</th>
+                <th width="20%">Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            ...
+
+# dropdown
+1   div 안에 button과 ul>list가 있어야한다.
+    container(button)에 hover 했을 때 item이 보일 수 있도록(content의 display: block)
+<div class="container">
+        <button type="button">Dropdown </button>
+        <div class="content">
+            <ul>
+                <li>Item</li>
+                <li>Item</li>
+                <li>Item</li>
+            </ul>
+        </div>
+</div>
+
+# modal
+1   화면 전체를 덮어버리기 : layout용 container로 보여줄 새로운 item을 감싼다. 
+        (1).container{
+            position:fixed;
+            top:0;
+            left:0;
+            bottom:0;
+            right:0;
+            background-color: rgba(0 0 0 /0.2)  //투명도 있어야 원래 있던 item이 보인다.
+        }
+        .item{
+            /* max-width와 margin으로 가운데 위치 */
+            max-width: 400px;
+            margin:100px auto 0;
+        }
+        (2).container{
+            position: fixed;
+            top:0;
+            left:0;
+            /* top,left:0 width,height:100% */
+            width:100%;
+            height:100%;
+            display: flex;
+        }
+        .item{
+             /* container의 flex 속성으로 item에 max-width 사용하지 않아도 자동으로 width값이 조절된다. 
+            400px 이하에서 너비가 줄어들지 않도록 하려면 -> shrink 속성 사용한다. */
+            width: 400px;
+        }

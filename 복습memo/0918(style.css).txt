@@ -1,0 +1,188 @@
+/* 밑줄 제거 */
+    text-decoration:none;
+
+padding : element의 크기를 조절한다. (element 내부에 공간을 만듦)
+border : element 사이의 여백을 줄 때 사용한다. (element의 외부의 공간)
+
+1rem(root element) : 브라우저의 기본 글자크기 (16px)
+1rem=16px
+% : 부모태그 기준
+
+/* viewport-height */
+/* 100vh = 디바이스 화면 높이의 100% */
+    height:100vh;
+
+ /* vertical-align 수직정렬 */
+ display: inline-block;
+    vertical-align: middle; 
+
+===========================================================================================
+#클래스 선택자
+<div class="a b"></div>
+
+style
+클래스 이름A + 클래스 이름B: A와 B 클래스 이름 모두 가진 element를 선택한다
+/* 주의 : 클래스 사이에 띄어쓰기를 하면 안된다. (.a' '.b (X), .a.b(O)) */
+.a.b{
+        border:1px dashed;
+        width:100px;
+        height:100px;
+        }
+    
+------------------------------------------------------------------------------------------
+#id 선택자
+/* id는 element당 하나씩만 가질 수 있다. */
+/* 다른 element가 같은 id를 가질 수 없다. */
+
+<div id="bar" class="rounded">Foo</div>
+
+#bar {
+            background-color: blue;
+        }
+
+/* 아이디+클래스 : 아이디와 클래스 모두 가진 element를 선택한다 */
+#bar.rounded{
+        border-radius:50%
+        }
+/* border-radius: 50% 이상이면 구 형태가 된다 */
+    
+------------------------------------------------------------------------------------------
+ # children과 direct children 선택자
+ <div class="level1">
+        <div class="level2">
+            <div class="level3"></div>
+        </div>
+    </div>
+
+/* children 선택자 */
+/* parent children : parent + 띄어쓰기 + children */
+/* parent 아래의 모든 childre(모든 element) */
+/* level1 아래 모든 div */
+        .level1 div{
+            border:1px dashed;
+        }
+
+/* parent > direct children : 바로 아래의 children을 선택한다 */
+        .level1 > .level2{
+            border-radius:10px;
+        } */
+        .level1 > div{
+            border-radius:10px;
+        }
+    
+------------------------------------------------------------------------------------------
+# 기타
+    <style>
+/* idA,idB,...: 다른 클래스 이름에 같은 속성을 준다 */
+        #foo,#bar{
+            border:1px dashed;
+            width:100px;
+            height:100px;
+        }
+    </style>
+
+    <div id="foo">Foo</div>
+    <div id="bar">Bar</div>
+
+------------------------------------------------------------------------------------------
+#Pseudo class 와 Pseudo element (가짜 클래스와 가짜 엘리먼트)
+/* Pseudo class */
+/* class 이름 옆에 name의 형태로 작성한다 */
+/* element에 특별한 상태를 정의하기 위해 사용된다 */
+        button:hover{
+            background-color:#555;
+        }
+        
+        input[type=text]:focus{
+            outline :5px solid red;
+        }
+
+/* ul의 children 중 첫번째 엘리먼트를 선택한다 */
+        ul li:first-child{
+            font-weight:bold;
+        }
+/*n번째 엘리먼트 선택*/
+        ul li:nth-child(2){
+            text-decoration: line-through;
+        }
+/* ul의 children 중 마지막 엘리먼트를 선택한다 */
+        ul li:last-child{
+            font-style:italic;
+        }
+    
+------------------------------------------------------------------------------------------
+#Pseudo element
+/* parent::after : psuedo element를 parent의 마지막 children 뒤에 추가한다 */
+/* parent::before : psuedo element를 parent의 첫번째 children 앞에 추가한다 */
+/* 스타일 속성으로 content 등 작성이 가능하다*/
+        .container::after{
+            content:"Square";
+            background-color:#888;
+        }
+
+===========================================================================================
+# text-align: text의 정렬 */
+/* left(기본값), center, right */
+    text-align:left;
+
+/* text-shadow:text의 그림자 효과 */
+/* text-shdow : 오른쪽(필수) 아래(필수) 위 아래 color */
+    text-shadow: 2px 2px #ddd;
+
+/* 글자 사이의 간격 */
+    letter-spacing: 10px;
+
+/* 줄간격 (문장의 수직 간격) */
+    line-height:2rem;
+
+------------------------------------------------------------------------------------------
+# border
+/* border의 굵기 */
+    border-width: 8px;
+
+border:width style color */
+/* direction이 없으면 전체에 적용된다. (top, left, bottom, right) */
+    border:8px solid blue;
+
+------------------------------------------------------------------------------------------
+# color
+/* rgb(red,green,blue) */ > rgb(0,0,255)
+/* rgba(red,green,blue, alpha(opacity)) */ > rgba(0,0,255,0.5)
+/* 0 ~ 255 */
+/* opacity 0 (완전투명)~ 1(완전불투명) */
+
+/* #rrggbb */ > #0000ff;
+/* #rrggbb 에서 rr이 같고,gg가 같고, bb가 같을 때 3자리로 사용할 수 있다. */ > #0f0
+
+--------------------------------------------------------------------------------------
+# margin
+/* margin negative(음수값) */
+/* direction과 반대로 margin이 적용된다. */
+    margin-left:-50px;
+    margin-top:-50px;
+------------------------------------------------------------------------------------------
+# box-sizing 
+box-sizing: content-box(기본값), border-box
+
+/* content-box: border , padding값이 존재하면 width, height 값에 border, padding값이 합하여 적용된다 (사용자가 설정한 width,height 값보다 element가 커진다.) */
+/* border-box : 기본값보다 더 기본값처럼 사용된다
+border와 padding을 주어진 width 와 height 안으로 적용한다. (사용자가 설정한 width, height 그대로 사용 가능) */
+------------------------------------------------------------------------------------------
+# Display 
+display: block, inline-block, inline
+
+inline-block
+필요한 만큼만 넓이를 차지한다 
+margin, padding 모두 적용 된다 
+
+block
+부모 element의 넓이를 다 차지한다
+
+inline
+필요한 만큼만 넓이를 차지한다 
+위 아래 margin과 padding이 적용되지 않는다.
+주로 text에서 사용된다 
+대표적인 element: span, anchor,...
+
+/* span 태그 style로 바로 적용 가능하다 */
+<span style="font-weight:bold;">
