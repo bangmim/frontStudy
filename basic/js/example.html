@@ -7,8 +7,365 @@
     <title>Document</title>
 </head>
 <body>
+
+    <!-- <style>
+        svg{
+            width:3rem;
+            cursor:pointer;
+        }
+        .fill-red{
+            fill:#f00;
+        }
+    </style>
     <h1>좋아요</h1>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.<path d="M313.4 32.9c26 5.2 42.9 30.5 37.7 56.5l-2.3 11.4c-5.3 26.7-15.1 52.1-28.8 75.2H464c26.5 0 48 21.5 48 48c0 25.3-19.5 46-44.3 47.9c7.7 8.5 12.3 19.8 12.3 32.1c0 23.4-16.8 42.9-38.9 47.1c4.4 7.2 6.9 15.8 6.9 24.9c0 21.3-13.9 39.4-33.1 45.6c.7 3.3 1.1 6.8 1.1 10.4c0 26.5-21.5 48-48 48H294.5c-19 0-37.5-5.6-53.3-16.1l-38.5-25.7C176 420.4 160 390.4 160 358.3V320 272 247.1c0-29.2 13.3-56.7 36-75l7.4-5.9c26.5-21.2 44.6-51 51.2-84.2l2.3-11.4c5.2-26 30.5-42.9 56.5-37.7zM32 192H96c17.7 0 32 14.3 32 32V448c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V224c0-17.7 14.3-32 32-32z"/></svg> -->
     
+    <!-- <script>
+        const svg=document.querySelector("svg");
+
+        svg.addEventListener("click",(e)=>{
+            // element.classList.toggle("classname") : element의 classList에 class가 있으면 제거하고 없으면 추가한다.
+            svg.classList.toggle("fill-red")
+        })
+    </script> -->
+
+    <!-- # Form -->
+
+    <!-- <h1>Google</h1>
+
+    <form action="">
+        <input type="text">
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        const form=document.querySelector("form")
+
+        form.addEventListener("submit",(e)=>{
+            // 서버에 요청을 전송하지 않음.
+            e.preventDefault();
+
+            const input=document.querySelector("input")
+            console.log("검색어:",input.value)
+        })
+    </script> -->
+
+    <!-- ==## Q. -->
+
+    <!-- <h1>Login</h1>
+    <form action="">
+        <div class="">
+            <label for="">Username</label>
+            <input type="text" required>
+        </div>
+        <div class="">
+            <label for="">Password</label>
+            <input type="text">
+        </div>
+        <div class="">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+    <script>
+        const form=document.querySelector("form")
+
+        form.addEventListener("submit",(e)=>{
+            e.preventDefault();
+
+            const inputs=document.querySelectorAll("input")
+
+            // console.log("username:",input[0].value)
+            // console.log("password:",input[1].value)
+           
+            // 강사님 답안 
+            // user 오브젝트를 선언하여 출력한다.
+            const user={
+                username:inputs[0].value,
+                password:inputs[1].value
+            }
+
+            console.log("user",user)
+        })
+    </script> -->
+
+    <!-- <h1>비밀번호 검증</h1>
+
+    <form action="">
+        <div class="">
+            <label for="">비밀번호</label>
+            <input type="text">
+        </div>
+        <p>비밀번호를 입력하세요</p>
+    </form>
+
+    <script>
+        const input=document.querySelector("input")
+
+        // keyup:키보드 버튼이 눌렸을 때 event가 실행된다.
+        input.addEventListener("keyup",(e)=>{
+            const p=document.querySelector("p")
+            console.log(e.target.value);
+
+            if(!e.target.value){    //빈문자열일때(!"")
+            p.textContent="비밀번호는 필수입니다."
+            } else if(e.target.value.length<6){
+                p.textContent="비밀번호가 안전하지 않습니다"
+            }else{
+                p.textContent="비밀번호가 안전합니다"
+            }
+        })
+    </script> -->
+
+    <!-- ==## Q. -->
+    
+    <!-- <h1>CU 관리자 페이지</h1>
+
+    <form action="">
+            <input type="text" placeholder="예)기네스, 아일랜드 맥주">
+            <button>등록</button>
+    </form>
+    <ul></ul>
+
+
+
+    <script>
+        const input = document.querySelector("input")
+        const form=document.querySelector("form")
+        const ul=document.querySelector("ul")
+
+        form.addEventListener("submit",(e)=>{
+            e.preventDefault();
+
+            const li=document.createElement("li")
+            ul.appendChild(li)
+
+            li.textContent=input.value
+            input.value=""  //초기화 : 등록 이후 input의 내용이 초기화된다.
+        })
+    </script> -->
+
+    <!-- <h1>Accordion</h1>
+
+    <style>
+        button{
+            padding:0.5rem;
+            width:100%;
+            text-align:left;
+            cursor:pointer;
+            border:none;
+        }
+        p{
+            margin:0;
+        }
+        .hidden{
+            display:none;
+        }
+    </style>
+
+    <div>
+        <button>Tab</button>
+        <p class="hidden">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro commodi, sint soluta cumque blanditiis beatae. </p>
+    </div>
+
+    <script>
+        const button=document.querySelector("button")
+        
+        button.addEventListener("click",(e)=>{
+            // element.nextElementSibling: DOM tree에서 같은 레벨의 바로 다음 element를 선택한다.
+            // e.target > button
+            const p=e.target.nextElementSibling;
+
+            // console.log(p)
+
+            p.classList.toggle("hidden")
+        })
+    </script> -->
+
+    <!-- <h1>Animated Accordion</h1>
+
+    <style>
+        button{
+            padding:0.5rem;
+            width:100%;
+            text-align:left;
+            cursor:pointer;
+            border:none;
+        }
+        p{
+            margin:0;
+            overflow: hidden;
+            border:1px dashed;
+            transition:0.5s
+        }
+        .max-h-0{
+            max-height:0;
+        }
+        .max-h-20{
+            max-height:5rem;
+        }
+    </style>
+
+    <div>
+        <button>Tab</button>
+        <p class="max-h-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sed maiores, consequuntur iusto officia tenetur architecto a ipsum dolorem dolor quos vel deserunt debitis ratione, illum, placeat blanditiis tempore repudiandae.</p>
+    </div>
+
+    <script>
+        const button=document.querySelector("button")
+
+        button.addEventListener("click",(e)=>{
+            // p는 따로 선언하지않고, nextElementSibling으로 선언한다.
+            const p=e.target.nextElementSibling;
+
+            // p.classList.toggle("max-h-0")
+            p.classList.toggle("max-h-20")
+        })
+    </script> -->
+
+    <!-- <h1>Multiple Accordion</h1>
+
+    <style>
+        button{
+            padding:0.5rem;
+            width:100%;
+            border:none;
+            text-align:left;
+            cursor:pointer;
+        }
+        p{
+            margin:0;
+            overflow:hidden;
+            transition:0.5s
+        }
+        .max-h-0{
+            max-height:0;
+        }
+        .max-h-20{
+            max-height:5rem;
+        }
+    </style>
+
+    <div>
+        <button>Tab1</button>
+        <p class="max-h-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui architecto veniam nostrum debitis expedita tenetur modi minus corporis?</p>
+    </div>
+    <div>
+        <button >Tab2</button>
+        <p class="max-h-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui architecto veniam nostrum debitis expedita tenetur modi minus corporis?</p>
+    </div>
+    <div>
+        <button>Tab3</button>
+        <p class="max-h-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui architecto veniam nostrum debitis expedita tenetur modi minus corporis?</p>
+    </div>
+    
+    <script>
+        const button=document.querySelectorAll("button")
+
+        // console.log(buttons[0].nextElementSibling.classList[0])
+
+        for(let i=0; i<button.length; i++){
+            button[i].addEventListener("click",(e)=>{
+                const p=e.target.nextElementSibling;
+        
+                p.classList.toggle("max-h-0")
+                p.classList.toggle("max-h-20")
+                
+            })
+        }
+    </script> -->
+
+    <!-- <h1>Top navigation</h1>
+
+    <style>
+        header{
+            border:1px solid #ddd;
+        }
+        button{
+            padding:0.5rem;
+            width:100%;
+            border:none;
+            cursor:pointer;
+            background-color: #fff ;
+        }
+        a{
+            display: block;
+            padding:0.5rem;
+        }
+        a:hover{
+            background-color: #eee;
+        }
+        .hidden{
+            display:none
+        }
+    </style>
+
+    <header>
+        <div>
+            <button>#</button>
+        </div>
+        <nav class="hidden">
+            <a href="">Link</a>
+            <a href="">Link</a>
+            <a href="">Link</a>
+        </nav>
+    </header>
+
+    <script>
+        const button=document.querySelector("button")
+
+        button.addEventListener("click",(e)=>{
+            const nav=document.querySelector("nav")
+            nav.classList.toggle("hidden")
+        })
+    </script> -->
+
+    <h1>Animated top navigation</h1>
+
+    <style>
+        header{
+            border:1px solid #eee;
+        }
+        button{
+            padding:0.5rem;
+            border:none;
+            cursor:pointer;
+            background-color: #fff;
+        }
+        a{
+            display: block;
+        }
+        nav{
+            height:100px;
+            overflow-y: scroll;
+        }
+        .hidden{
+            /* display:none; */
+        }
+        a{
+            padding:0.5rem;
+        }
+        a:hover{
+            background-color: #ddd;
+        }
+    </style>
+
+    <header>
+        <div>
+            <button>#</button>
+        </div>
+        <nav class="hidden">
+            <a href="">Link</a>
+            <a href="">Link</a>
+            <a href="">Link</a>
+            <a href="">Link</a>
+            <a href="">Link</a>
+            <a href="">Link</a>
+        </nav>
+    </header>
+
+
 
 </body>
 </html>

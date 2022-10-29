@@ -1,0 +1,32 @@
+lib 폴더에서 사용 > 사용할 item 복사 후 붙여넣기 (또는 끌어오면 된다) 하면 된다.
+폰트어썸 페이지에서 사용 > 사용할 icon 검색 > </>모양 (copy svg code) 붙여넣기
+
+(1) toggle
+ element.classList.toggle("classname") : element의 classList에 class가 있으면 제거하고 없으면 추가한다.
+//토글 할 class(style)를 미리 만들어 놓아야 한다.
+
+(2) Form
+
+1.submit
+form.addEventListener("submit",(e)=>{
+e.preventDefault();     // 서버에 요청을 전송하지 않음.
+})
+
+2.keyup 
+keyup:키보드 버튼이 눌렸을 때 event가 실행된다.
+
+input.addEventListener("keyup",(e)=>{
+const p=document.querySelector("p")
+console.log(e.target.value)
+            if(!e.target.value){    //빈문자열일때(!"")
+            p.textContent="비밀번호는 필수입니다."
+            } else if(e.target.value.length<6){
+                p.textContent="비밀번호가 안전하지 않습니다"
+            }else{
+                p.textContent="비밀번호가 안전합니다"
+            }
+})
+
+// p.textContent : p의 text를 변경한다.
+//addEventListener 안에 조건문을 사용할 수 있다.
+

@@ -491,7 +491,7 @@ console.log(baz.getAttribute("value"))
 
 <!-- ==## Q. -->
 
-<style>
+<!-- <style>
     .yellow{
         background-color: yellow;
     }
@@ -505,7 +505,7 @@ console.log(baz.getAttribute("value"))
     const button=document.querySelector("button")
 
     button.addEventListener("click",(e)=>{
-       if(button.classList ==="yellow"){
+       if(button.classList =="yellow"){
            button.classList.remove("yellow")
            console.log(button.classList)
         }else{
@@ -513,6 +513,10 @@ console.log(baz.getAttribute("value"))
             console.log(button.classList)
        }
     })
+// 추가 :classList와 문자열 비교는 엄격비교든 일반 비교든 사용하지 않는 것이 좋습니다
+// 비교는 원시값(string, number, boolean 등의 data type)끼리만 하는 것이 좋습니다 lol
+// 예) "" == 0, false === undefined
+
     // 강사님 답안
     // if(button.style.backgroundColor==="yellow"){
     //     button.style.backgroundColor=="";
@@ -521,7 +525,7 @@ console.log(baz.getAttribute("value"))
     // }
 
 console.log(button.style)
-</script>
+</script> -->
 
 </body>
 </html>

@@ -1,0 +1,85 @@
+#Accordion
+
+element.nextElementSibling: DOM tree에서 같은 레벨의 바로 다음 element를 선택한다.
+
+<button>Tab</button>
+<p class="hidden">Lorem ipsum dolor sit,</p>
+
+<script>
+const button=document.querySelector("button")
+        
+button.addEventListener("click",(e)=>{
+
+// e.target > button
+const p=e.target.nextElementSibling;
+
+p.classList.toggle("hidden")
+})
+</script>
+
+#Animated Accordion
+
+p 태그에 animation 속도 적용
+transition:0.5s 
+
+처음 초기 적용될 class
+.max-h-0{
+    max-height:0;
+}
+
+스크립트를 이용해 애니메이션 효과를 적용할 class 추가
+.max-h-20{
+    max-height:5rem;
+}
+
+<button>Tab</button>
+<p class="max-h-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+
+<script>
+const button=document.querySelector("button")
+
+button.addEventListener("click",(e)=>{
+// p는 따로 선언하지않고, nextElementSibling으로 선언한다.
+const p=e.target.nextElementSibling;
+
+p.classList.toggle("max-h-0")
+//토글은 여러개 할 수 있다. 가장 마지막 class가 적용된다.
+p.classList.toggle("max-h-20")
+
+})
+</script>
+
+#아코디언이 여러개 일 때 for 반복문 사용하기
+
+for(let i=0; i<button.length; i++){
+    //button이 여러개인 경우 반복문 속 인덱스를 활용하여 event를 적용할 수 있다.
+button[i].addEventListener("click",(e)=>{
+const p=e.target.nextElementSibling;
+        
+p.classList.toggle("max-h-0")
+p.classList.toggle("max-h-20")
+                
+})
+}
+
+#navigated Accordion 
+
+<header>
+    <div>
+        <button>#</button>  
+    </div>
+    <nav class="hidden">
+        <a href="">Link</a>
+        <a href="">Link</a>
+        <a href="">Link</a>
+    </nav>
+</header>
+
+<script>
+const button=document.querySelector("button")
+
+button.addEventListener("click",(e)=>{
+const nav=document.querySelector("nav")
+nav.classList.toggle("hidden")
+})
+</script>

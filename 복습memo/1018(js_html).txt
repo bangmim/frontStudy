@@ -4,7 +4,7 @@ document.querySelectorAll(태그이름) : 태그 이름을 가진 element를 모
 document.getElementById : id를 가진 element를 선택한다
 document.getElementsByClassName(class) : class를 가진 element를 모두 선택한다
 
-document.querySelector(#id) : id를 가진 element를 선택한다
+document.querySelector("#id") : id를 가진 element를 선택한다
 document.querySelectorAll(.class) : class를 가진 element를 모두 선택한다.
 
 ## DOM 속성 : createElement, appendChild
