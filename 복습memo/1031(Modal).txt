@@ -1,0 +1,103 @@
+(1) 버튼을 누르면 modal
+
+<button>
+<div id="overlay" class="hidden">
+    <div id="modal">
+        <h3>Modal Content</h3>
+        <p>lorem</p>
+</div>
+
+<script>
+//1.버튼을 누르면 overlay보이게한다. (hidden없애기)
+button.addEventListener("click",(e)=>{
+        overlay.classList.remove("hidden")
+    })
+</script>
+//2.overlay 누르면 없애기 (hidden 적용하기)
+overlay.addEventListener("click",(e)=>{
+        // 방법(1)
+        overlay.classList.add("hidden")
+
+        // 방법(2)
+        if(e.target===overlay){
+            e.target.classList.add("hidden")
+        }
+</script>
+
+(2) 이미지를 누르면 메인 이미지가 바뀜
+//main 클래스와 container(img-gallary)클래스로 크게 나눈다.
+//main > img > id: 적용
+//container > img > onClick함수 적용 (onClick="f(this)")
+
+<div class="main">
+    <img src="../../img/puppy-1207816__480.jpg" alt="" id="main-image">
+</div>
+
+<div class="container">
+    <div class="item">
+        <img src="" alt="" onClick="f(this)">
+    </div>
+    ...
+</div>
+
+<script>
+// element의 onClick 속성에 함수를 연결한다.
+// element의 attribute를 사용해서 이벤트를 처리한다.
+function f(el){
+        console.log(el.src)
+        
+        //함수 내에서 mainImage를 선언한다.
+        const mainImage=document.getElementById("main-image")
+
+        // main img의 src와 constainer img의 src 일치시키기
+        mainImage.src=el.src;
+    }
+</script>
+
+(3) 이미지를 누르면 modal
+//main이미지 (커지는 img)와 container(img gallary)클래스로 나눈다.
+//maind 클래스에는 id="overlay"와 class="hidden" 적용 (이벤트 없을 때에는 보이지 않아야한다.)
+//container의 img에는 onClick함수 (onClick="f(this)")
+
+<div id="overlay" class="hidden">
+    <img src="" id="main-image" alt="">
+</div>
+
+<div class="container">
+    <div class="item">
+        <img src="" alt="" onClick="f(this)">
+    </div>
+    ...
+</div>
+
+<script>
+    function f(el){
+        //함수 내에서 overlay와 main-image 선언
+        const overlay=document.getElementById("overlay")
+        const mainImage=document.getElementById("main-image")
+
+        // (1) 메인 이미지와 소스를 일치시킨다
+        mainImage.src=el.src
+
+        // (2) 메인 이미지에 있는 hidden을 없앤다
+        (overlay가 보이게 된다.)
+        overlay.classList.remove("hidden")
+        
+        // (3) overlay를 클릭했을 때 다시 hidden한다.
+        overlay.addEventListener("click",(e)=>{
+            console.log(e.target)
+
+            overlay.classList.add("hidden")
+        })
+    }
+</script>
+
+//overlay 스타일 (배경)
+#overlay{
+    position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background-color: rgba(0, 0, 0, 0.2);
+}

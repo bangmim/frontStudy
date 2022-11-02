@@ -83,3 +83,23 @@ const nav=document.querySelector("nav")
 nav.classList.toggle("hidden")
 })
 </script>
+
+
+/* nav의 class를 hidden으로 하면 nav의 animation효과를 적용할 수 없다. > max-h-0를 사용하는 이유(높이를 조절하여 animation효과를 적용한다) */
+/* .hidden{
+display:none;
+} */
+
+//Pure CSS
+
+input type="checkbox"
+
+input의 id와 label for 의 값을 일치시킨다.
+
+input > none
+
+//+선택자 == JavaScript의 nextElementSibling 같다.
+//같은 레벨의 다음 element
+input:checked + p{
+    display:block
+}

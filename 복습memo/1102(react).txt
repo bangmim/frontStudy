@@ -1,0 +1,8 @@
+react-basic 폴더 만들기
+
+터미널에서
+npx create-react-app react-basic 
+
+react 페이지 시작하기
+react-basic 폴더에서
+npm start           //browser에서는 http://localhost:3000/
