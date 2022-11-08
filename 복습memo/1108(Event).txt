@@ -1,0 +1,11 @@
+    event 처리 : element의 attribute(onClick)으로 처리한다.
+
+handleClick
+
+handleChange
+
+submit event
+
+#DOM 업데이트
+import 함수 추가 useEffect, useLayoutEffect, useState
+(예)import React, {createContext,useContex,useEffect, useLayoutEffect, useState} from 'react';

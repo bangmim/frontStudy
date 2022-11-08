@@ -1,0 +1,72 @@
+//JSX = Virtual DOM
+
+// React.Fragment
+-하나의 element로 감싸야한다 > 불필요한 div로 인해 구조가 복잡해진다.
+-이럴 때 사용하는 것이 React.Fragment이다.
+-DOM에 element를 추가하지 않고 자식을 그룹화 할 수 있다.
+
+방법 : <React.Fragment></React.Fragment> 또는 <></>
+
+//JSX inline Style attribute
+{/* style attribute에 Object를 인자로 전달한다 */}
+-방법 : 스타일을 적용할 태그 안에 style 속성값을 직접적으로 적어준다. [중괄호 2번 사용] >> style={{style object}}
+
+<ul style={{border:"1px solid"}}>
+<li style={{textDecoration:"underline"}}>Foo</li>
+
+-방법2 : 스타일 object를 선언하여 적용할 수 있다. [중괄호 1번 사용]
+
+const soldOut={
+    textDecoration:"line-through",
+    color:"#ddd"
+  };
+<li style={soldOut}>Foo</li>
+
+//JSX 내에서 코드 작성하기
+-중괄호 내에서 코드를 작성하고 호출할 수 있다.
+
+const foo="Foo";
+
+  return(
+    <>
+    <div>{foo}</div>    //선언한 변수 출력
+    <div>{"Ba"+"r"}</div>   //문자열끼리 연산가능
+    <div>{"Baz".valueOf()}</div>    //메서드 사용가능   //.valueOf() : String타입의 메서드, 입력한 value를 return
+    </>
+  )
+
+//JSX 내에서 조건문 사용하기
+
+<div>{true && "Foo"}</div>
+<div>{false || "Bar"}</div>
+<div>{!true ? "" : "Baz"}</div>
+
+//JSX에서 반복문
+const arr=["Foo","Bar","Baz"];
+
+(1)직접 작성하여 출력
+<ul>
+    {arr.map((item,index)=>(
+    <li key={index}>{item}</li>     //key={index} :key에 고유한 값을 줘야한다 >> 고유한 값으로 index사용한 것
+  ))}
+</ul>
+(2)return 값을 변수에 담아 출력
+const list=arr.map((item,index)=>(
+    <li key={index}>{item}</li>
+  ))
+<ul>
+      {list}
+    
+</ul>
+ 
+**화살표 함수 : 중괄호 생략 가능.
+중괄호 사용하면 return을 적어주어야한다.
+중괄호를 생략하면 return을 따로 적어주지 않아도 된다. 
+
+//Array에서 .map 함수 사용하여 Object 출력하기
+-item의 key를 중괄호로 사용하여 출력IrishBeer
+  const list=beers.map((beer,index)=>{
+    return (
+      <li key={index}>{beer.name},{beer.origin}</li>
+    )
+  })

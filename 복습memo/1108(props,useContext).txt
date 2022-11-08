@@ -1,0 +1,66 @@
+#props
+  선언한 변수 = {사용할 인자}   //Object
+  <Beer beer={irishBeer}/>
+  선언한 변수 = "Foo"   //직접적인 문자 사용
+  <C 변수="Foo"/>
+
+  **children=return값이 1개인 함수
+
+  (예)
+  function Baz(){
+  return <li>Baz</li>
+}
+function C(props){
+  const children=props.children;
+
+  return <ul>{children}</ul>
+}
+
+function App(){
+  return(
+    <>
+    <C>
+      <Baz/>
+    </C>
+    </>
+  )
+}
+
+++구조분해할당
+//인자에 {children}을 적으면 따로 children을 선언하지 않아도 children을 사용할 수 있다.
+function Beers({children}){   
+  return(
+    <fieldset>
+      <legend>Beers</legend>
+      {children}
+    </fieldset>
+  )
+}
+
+//createContext와 useContext를 사용하려면 import값 추가
+(import React, {createContext,useContext} from 'react';)
+
+// children에 props 전달하기
+
+const FooContext=createContext();
+
+function Foo(props){
+  const children=props.children;
+
+  const foo="FOO"
+
+  return(
+      <FooContext.Provider value={foo}>
+        {children}
+      </FooContext.Provider>
+      //(1)FooContext.Provider로 children을 감싸고, (2) value={foo}를 적용하면
+      =>children은 Foo함수 밖에서도 foo 변수에 접근이 가능해진다.
+  )
+}
+
+(1)FooContext는 함수 밖에서 선언한 createContext()함수이다.
+
+children에서 foo 변수에 접근하는 방법 : useContext 사용
+
+(예) children 함수 내에서
+ const x=useContext(FooContext) 선언한다.
