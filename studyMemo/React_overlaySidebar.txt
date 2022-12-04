@@ -1,0 +1,19 @@
+overlay: only 배경 -> div와 스타일로
+rgba(0 0 0 / 0.2)
+display:block
+
+sidebar : width 조절
+position : fixed
+기본 200px
+>> 숨길때는 -200px, 나올때는 0
+zindex:1 사용
+
+transform 사용할 때 
+`translateX(${})`
+
+태그에 직접 style 적용할때
+
+<조건>
+style={{color:dot===index && "red"}} : dot가 index와 같으면 color는 red
+
+.map() : key 값을 적어야한다.

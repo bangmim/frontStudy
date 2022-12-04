@@ -1,0 +1,86 @@
+const BeerContext =createContext();
+
+function Beers({children}){
+
+// createContext()가 있어야
+     children에서 useContext를 사용하여 접근할 수 있다.
+// <Beers></Beers>안에 있는 children은 value에(여기서는 acailability) 접근이 가능하다
+
+  const availability={
+    guinness:false,
+    asahi:false,
+    kloud:true
+  }
+
+  return(
+    <>
+    <h1>Beers &#127866;</h1>
+    <BeerContext.Provider value={availability}>
+      {children}
+    </BeerContext.Provider>
+    </>
+  )
+}
+
+function EuropeanBeers({children}){
+  return(
+    <>
+    <h2>European beers</h2>
+    {children}
+    </>
+  )
+}
+function IrishBeer(){
+  
+  // BeerContext를 사용(접근)한다.
+  const availability=useContext(BeerContext)
+
+  return (
+  <>
+  <h3>GUINNESS</h3>
+  <p>Available:{availability.guinness?"Yes":"No"}</p>
+  </>
+  )
+}
+function AsianBeers({children}){
+  return(
+    <>
+    <h2>Asian beers</h2>
+    {children}
+    </>
+  )
+}
+function JapaneseBeer(){
+  const availability=useContext(BeerContext)
+  return (
+    <>
+    <h3>ASAHI</h3>
+    <p>Available:{availability.asahi?"Yes":"No"}</p>
+    </>
+  )
+}
+function KoreanBeer(){
+  const availability=useContext(BeerContext)
+  return (
+  <>
+  <h3>KLOUD</h3>
+  <p>Available:{availability.kloud?"Yes":"No"}</p>
+  </>
+  )
+}
+
+function App(){
+  return(
+    <Beers> 
+    // 아래 children은 useContext를 사용하여 BeerContext에 접근할 수 있다.
+    // 이 때 BeerContext는 createContext로 선언되어야한다.
+      <EuropeanBeers>
+        <IrishBeer/>
+      </EuropeanBeers>
+      <AsianBeers>
+        <JapaneseBeer/>
+        <KoreanBeer/>
+      </AsianBeers>
+    </Beers>
+  )
+}

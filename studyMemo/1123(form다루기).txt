@@ -1,0 +1,22 @@
+## DOM 업데이트 == useState 활용 
+
+  ## Array 추가
+  1) beerList와 같은 형식의 object를 만든다
+   const newBeer={id:Math.random(), name:name}
+
+  2) beers에 (기존 array)에 newBeer(새 array)를 추가한다.
+  const updatedBeers=[...beers, newBeer];
+  
+
+  ## Array 속성 변경(update)
+  const editedBeer = beers.map(beer=>{
+      if (beerId === beer.id){
+        return  {...beer, available:!beer.available}
+  }})
+  
+
+  ## Array 삭제 : filter 사용
+  const updatedBeer = beers.filter(beer=>{
+     if (beer.id != beerId) {
+      return beer;
+     }})

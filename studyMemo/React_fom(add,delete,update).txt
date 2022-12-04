@@ -1,0 +1,212 @@
+###### 합치기 ########
+const initialBeer=[
+  {id:"b1", name:"Heineken", available:true},
+  {id:"b2", name:"Guinness", available:false},
+  {id:"b3", name:"Kloud", available:true},
+]
+
+function App(){
+  const [beers, setBeers]=useState(initialBeer)
+  const [name, setName]=useState("");
+
+  function handleSubmit(e){
+    e.preventDefault();
+    const newBeer={id:Math.random(), name:name, available:true}
+    const updateBeer=[...beers, newBeer]
+    console.log(updateBeer);
+
+    setBeers(updateBeer);
+  }
+
+  function Delete(e){
+    // console.log(e)
+    const bbb = beers.filter(beer=>{
+      if (beer.id !== e){
+        return beer
+      }
+    })
+    // console.log(bbb)
+    setBeers(bbb);
+  }
+
+  function handleClick(e){
+    // console.log(e)
+    const aaa = beers.map(beer=>{
+      if(beer.id===e){
+        return {...beer, available:!beer.available};
+      }
+     return beer;
+    })
+    setBeers(aaa);
+  }
+
+  const beerList= beers.map(beer=>(
+    <li key={beer.id}>{beer.name} {" "}
+    <button onClick={()=>{Delete(beer.id)}}>Delete</button> 
+    <button onClick={()=>{handleClick(beer.id)}}>
+      {beer.available ? "판매중":"품절"}
+      </button> 
+    </li>
+  ))
+
+  function handleChange(e){
+    const name = e.target.value;
+    setName(name);
+  }
+
+
+  return (
+    <>
+    <h1>Beers</h1>
+    <form onSubmit={handleSubmit}>
+    <input
+    type="text"
+    placeholder="Guinness"
+    onChange={handleChange}
+    value={name}
+    />
+    <button
+    type="submit"
+    disabled={!name}
+    >Add</button>
+    </form>
+    <ul>
+      {beerList}
+    </ul>
+    </>
+  )
+}
+
+
+
+######## form을 분리하는 경우 ########
+
+const initialBeer = [
+  { id: "b1", name: "Heineken", available: true },
+  { id: "b2", name: "Guinness", available: false },
+  { id: "b3", name: "Kloud", available: true },
+]
+
+function App() {
+  const [beers, setBeers] = useState(initialBeer);
+
+  function addBeer(newBeer) {
+    console.log(newBeer)
+    //beers 업데이트
+    const updateBeer = [...beers, newBeer];
+
+    setBeers(updateBeer)
+  }
+
+  function deleteBeer(beerId) {
+    // console.log(beerId);
+    const restBeer = beers.filter(beer => {
+      if (beer.id !== beerId) {
+        return beer
+      }
+    })
+    // console.log(restBeer)
+    setBeers(restBeer);
+  }
+
+  function editBeer(beerId) {
+    // console.log(beerId)
+
+    const edit = beers.map(beer=>{
+      if(beer.id === beerId){
+        return { ...beer, available: !beer.available }
+      }
+      return beer      
+    })
+    console.log(edit)
+    setBeers(edit);
+  }
+
+  const beerList = beers.map(beer => (
+    // deleteBeer와 editBeer를 속성에 추가해야 업데이트 된 state로 사용할 수 있다.
+    <Beer
+      key={beer.id}
+      beer={beer}
+      deleteBeer={deleteBeer}
+      editBeer={editBeer}
+    />
+  ))
+
+  return (
+    <>
+      <h1>Beers</h1>
+      <Form addBeer={addBeer} />
+      {beerList}
+    </>
+  )
+
+}
+
+function Form({ addBeer }) {
+  const [name, setName] = useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    const newBeer = { id: Math.random(), name: name, available: true };
+
+    addBeer(newBeer);
+
+    setName("");  //2. name 초기화 == input의 value 초기화
+  }
+
+  function handleChange(e) {
+    const name = e.target.value;
+    setName(name);
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        onChange={handleChange}
+        value={name}  //input 값 비우기위해 1. value={name}으로 설정
+      />
+      <button
+        type="submit"
+        disabled={!name}
+      >Submit</button>
+    </form>
+  )
+}
+
+// function Beer({ beer, deleteBeer, editBeer }) {
+
+//   function Delete(e) {
+//     // console.log(e);
+//     deleteBeer(e);
+//   }
+
+//   function handleClick(e) {
+//     editBeer(e)
+//   }
+
+//   return (
+//     <li>{beer.name}
+//       <button onClick={() => { Delete(beer.id) }} >
+//         Detete</button>
+//       <button onClick={() => { handleClick(beer.id) }}>{beer.available ? "판매중" : "품절"}</button>
+//     </li>
+//   )
+// }
+
+function Beer({ beer, deleteBeer, editBeer }) {
+  /*
+  Beer 강사님 답안
+  함수를 추가로 선언하지 않아도
+  App()에서 가져온
+  deleteBeer와 editBeer 함수를 이용할 수 있다.
+  */
+  return (
+    <li>{beer.name}
+      <button onClick={() => { deleteBeer(beer.id) }} >
+        Detete</button>
+      <button onClick={() => { editBeer(beer.id) }}>{beer.available ? "판매중" : "품절"}</button>
+    </li>
+  )
+}

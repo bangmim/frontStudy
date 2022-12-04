@@ -1,0 +1,14 @@
+// # fetch data (데이터 요청하기)
+    
+    // useEffect(Hook)
+    // 비동기적으로 작동한다.
+
+    // 사용방법
+    // useEffect(callback) : 컴포넌트가 실행될 때마다 callback이 실행된다.
+    // useEffect(callback, []) : 컴포넌트의 최초 실행시에만 callback이 실행된다.
+    // useEffect(callback, [dep1, ... ]) : 컴포넌트의 최초 실행시, dependency가 없데이트 될 때마다 callback이 실행된다.
+    
+    useEffect(()=>{
+        const time = new Date().toLocaleTimeString();
+        console.log(time);
+    },[])
