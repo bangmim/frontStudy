@@ -1,0 +1,5 @@
+서버 켜기 : npm run devstart(script 속성값)
+서버 끄기 : ctrl + c
+
+# error
+404 >> 처리할 라우터가 존재하지 않음. 라우터 확인!

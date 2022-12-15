@@ -50,7 +50,3 @@ console.log(arr.filter(function(value,index,array){
         return value
     }
 }))
-
-# Destructing assignment (구조분해할당)
-// (1) Array : Array의 item들을 개별적으로 변수에 담을 수 있게 한다.
-// (2) Object : Object의 속성들을 개별적으로 변수에 담을 수 있게 한다.

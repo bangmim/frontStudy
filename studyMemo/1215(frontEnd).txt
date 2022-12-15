@@ -1,0 +1,31 @@
+npx create-react-app client
+
+# packages (client 폴더로 이동)
+리액트 라우터 설치
+npm install react-router-dom
+테일윈드 설치
+npm install -D tailwind postcss autoprefixer
+테일윈드 config파일 생성
+npx tailwindcss init -p
+
+# index.css >>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+# tailwind.config >>> content 수정
+content: [
+    "./src/**/*.js"     // src 폴더에  .js파일을 컴포넌트로 사용하겠다.
+  ],
+
+# .env 생성>>>
+REACT_APP_SERVER="http://localhost:3000"
+
+# 서버 시작
+npm start
+
+# README.md 수정>>> (해야할 것 미리 작성)
+
+# components / utils 폴더 생성
+
+# 파일 만들기

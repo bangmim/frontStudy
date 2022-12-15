@@ -1,0 +1,84 @@
+# Destructing assignment (구조분해할당)
+(1) Array : Array의 item들을 개별적으로 변수에 담을 수 있게 한다.
+(2) Object : Object의 속성들을 개별적으로 변수에 담을 수 있게 한다.
+react에 주로 사용한다.
+
+(1) Array
+
+1)
+const arr=["foo","bar","baz"]
+
+// 기존의 방법 (변수 만들기)
+const item0=arr[0]
+const item1=arr[1]
+const item2=arr[2]
+
+// 단순해진 문법
+const [item0,item1,item2]=arr;
+
+2)
+function calculator(x,y){
+    return [x+y,x-y,x*y,x/y]
+}
+
+// return object 형태가 아닌 단순해진 문법
+const [add,substract,multiply,divide]=calculator(1,2)
+
+3)
+const beers=[
+    {name:"Heineken", origin:"Netherlands"},
+    {name:"Kloud",origin:"S.Korea"},
+    {name:"Guiness",origin:"Ireland"},
+    {name:"Asahi",origin:"Japan"}
+]
+
+const [DeutchBeer,KoreanBeer,IrishBeer,JapaneseBeer]=beers;
+
+==============================================================
+(2) Object ({key:value}로 이루어졌다.)
+
+1)
+const o={prop1:"foo",prop2:"bar",prop3:"baz"}
+
+// Object의 속성들을 변수에 담았다
+const prop1=o.prop1;        //속성(property) (.속성(key))
+const prop2=o.prop2;
+const prop3=o.prop3;
+
+console.log(prop1)      //key로 접근하여 value를 출력한다.
+console.log(prop2)
+console.log(prop3)
+
+const o={a:"foo",b:"bar",c:"baz"}
+
+// 더 단순해진 문법
+const {a,b,c}=o;        //{object의 key로만 이루어짐}=object
+
+2)
+함수에서 Destructing 사용하기
+
+const o={prop1:"foo",prop2:"bar",prop3:"baz"}
+
+f(o)
+
+function f({prop1,prop2,prop3}){        f({object의 key값들로 이루어져야한다.})
+    console.log(prop1)
+    console.log(prop2)
+    console.log(prop3)
+}
+
+==Q. 다음과 같은 문장을 출력하는 함수를 정의해보세요 (구조분해할당을 사용하여 함수 파라미터를 정의)
+Guiness is originated in the brewery at Ireland.
+const irishBeer={name:"Guiness",origin:"Ireland"}
+
+const {name,origin}=irishBeer;
+
+// 문자열 사이에 , 대신 + 도 가능하다
+console.log(name, "is origineted in the brewery at",origin)
+
+// ==Q. 원산지에 일치하는 맥주이름의 변수를 만들어보세요.(구조분해할당 사용)
+const origins=["Netherlands","S.Korea","Irend","Japen"]
+
+const [Heineken,Kloud,Guiness,Asahi]=origins
+
+console.log(Heineken)

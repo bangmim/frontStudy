@@ -1,0 +1,23 @@
+# model
+// 데이터베이스에 해당 형식으로 저장하여 다른곳에서(import 한 곳) 파일을 주고받을 수 있게 해준다
+// 모델들을 이용하여 데이터베이스에 쿼리를 전송한다
+exports.User = mongoose.model('User',userSchema)
+
+# auth (Authorization : 인증)
+// JWT (json web token) : json 포맷 토큰
+로그인에 성공할 경우 서버가 발급한다
+유저는 매 요청시에 서버에 토큰을 함께 전송한다
+passport 라이브러리를 사용
+
+jwt 구조 >> [ (header).(payload).(signature) ]
+payload에 유저의 정보가 담겨있다
+
+User.findOne({username : jwt_payload.username}, 
+--> user 컬렉션(모델, 테이블) db에서 한명을 찾는다(findOne) 
+--> username: jwt_payload에서 username인 것
+
+//## package 삭제 : npm uninstall (packageName)
+
+//## 
+sync : 동기
+async : 비동기 => await과 함께 쓰인다

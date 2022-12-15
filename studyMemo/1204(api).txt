@@ -1,0 +1,6 @@
+공공데이터 포털
+
+데이터요청(api요청)
+
+project > group 폴더 만들기
+npx create-react-app group-project : 새로운 그룹프로젝트 리액트 만들기
